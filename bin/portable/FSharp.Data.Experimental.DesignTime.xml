@@ -744,7 +744,7 @@
 <member name="">
 
 </member>
-<member name="M:FSharp.Net.Http.RequestDetailed``4(System.String,Microsoft.FSharp.Core.FSharpOption{``0},Microsoft.FSharp.Core.FSharpOption{``1},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{``2},Microsoft.FSharp.Core.FSharpOption{``3},Microsoft.FSharp.Core.FSharpOption{System.Net.CookieContainer})">
+<member name="M:FSharp.Net.Http.RequestDetailed``5(System.String,Microsoft.FSharp.Core.FSharpOption{``0},Microsoft.FSharp.Core.FSharpOption{``1},Microsoft.FSharp.Core.FSharpOption{``2},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{``3},Microsoft.FSharp.Core.FSharpOption{``4},Microsoft.FSharp.Core.FSharpOption{System.Net.CookieContainer})">
 <summary>
  Download an HTTP web resource from the specified URL synchronously
  (allows specifying query string parameters and HTTP headers including
@@ -753,7 +753,7 @@
  that will be encoded, and the method will automatically be set if not specified
 </summary>
 </member>
-<member name="M:FSharp.Net.Http.Request``4(System.String,Microsoft.FSharp.Core.FSharpOption{``0},Microsoft.FSharp.Core.FSharpOption{``1},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{``2},Microsoft.FSharp.Core.FSharpOption{``3},Microsoft.FSharp.Core.FSharpOption{System.Net.CookieContainer})">
+<member name="M:FSharp.Net.Http.Request``5(System.String,Microsoft.FSharp.Core.FSharpOption{``0},Microsoft.FSharp.Core.FSharpOption{``1},Microsoft.FSharp.Core.FSharpOption{``2},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{``3},Microsoft.FSharp.Core.FSharpOption{``4},Microsoft.FSharp.Core.FSharpOption{System.Net.CookieContainer})">
 <summary>
  Download an HTTP web resource from the specified URL synchronously
  (allows specifying query string parameters and HTTP headers including
@@ -765,7 +765,7 @@
 <member name="">
 
 </member>
-<member name="M:FSharp.Net.Http.AsyncRequestDetailed``4(System.String,Microsoft.FSharp.Core.FSharpOption{``0},Microsoft.FSharp.Core.FSharpOption{``1},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{``2},Microsoft.FSharp.Core.FSharpOption{``3},Microsoft.FSharp.Core.FSharpOption{System.Net.CookieContainer})">
+<member name="M:FSharp.Net.Http.AsyncRequestDetailed``5(System.String,Microsoft.FSharp.Core.FSharpOption{``0},Microsoft.FSharp.Core.FSharpOption{``1},Microsoft.FSharp.Core.FSharpOption{``2},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{``3},Microsoft.FSharp.Core.FSharpOption{``4},Microsoft.FSharp.Core.FSharpOption{System.Net.CookieContainer})">
 <summary>
  Download an HTTP web resource from the specified URL asynchronously
  (allows specifying query string parameters and HTTP headers including
@@ -774,7 +774,7 @@
  that will be encoded, and the method will automatically be set if not specified
 </summary>
 </member>
-<member name="M:FSharp.Net.Http.AsyncRequest``4(System.String,Microsoft.FSharp.Core.FSharpOption{``0},Microsoft.FSharp.Core.FSharpOption{``1},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{``2},Microsoft.FSharp.Core.FSharpOption{``3},Microsoft.FSharp.Core.FSharpOption{System.Net.CookieContainer})">
+<member name="M:FSharp.Net.Http.AsyncRequest``5(System.String,Microsoft.FSharp.Core.FSharpOption{``0},Microsoft.FSharp.Core.FSharpOption{``1},Microsoft.FSharp.Core.FSharpOption{``2},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{``3},Microsoft.FSharp.Core.FSharpOption{``4},Microsoft.FSharp.Core.FSharpOption{System.Net.CookieContainer})">
 <summary>
  Download an HTTP web resource from the specified URL asynchronously
  (allows specifying query string parameters and HTTP headers including
@@ -1091,7 +1091,7 @@
 <member name="T:ProviderImplementation.ApiarySchemaAuto">
 
 </member>
-<member name="M:ProviderImplementation.ApiaryTypeBuilder.generateSchema(System.String,ProviderImplementation.ApiaryGenerationContext,ProviderImplementation.ProvidedTypes.ProvidedTypeDefinition,ProviderImplementation.RestApi{System.Tuple{System.String,System.String}})">
+<member name="M:ProviderImplementation.ApiaryTypeBuilder.generateSchema(System.String,ProviderImplementation.ApiaryGenerationContext,System.String,ProviderImplementation.ProvidedTypes.ProvidedTypeDefinition,ProviderImplementation.RestApi{System.Tuple{System.String,System.String}})">
 <summary>
  This is the main recursive function that generates type for a &quot;RestApi&quot; specification. 
 
@@ -1124,7 +1124,7 @@
 <member name="">
 
 </member>
-<member name="M:ProviderImplementation.ApiaryTypeBuilder.generateMembersForJsonResult(System.String,ProviderImplementation.ApiaryGenerationContext,FSharp.Data.Json.JsonValue)">
+<member name="M:ProviderImplementation.ApiaryTypeBuilder.generateMembersForJsonResult(System.String,ProviderImplementation.ApiaryGenerationContext,System.String,FSharp.Data.Json.JsonValue)">
 <summary>
  Given a specification (returned by the apiary.io service) 
  infer structure of JSON and generate a type for the result
@@ -1132,6 +1132,9 @@
  TODO: Lots of room for improvement here (pattern matching based
  on error codes, handle other file formats like XML...)
 </summary>
+</member>
+<member name="">
+
 </member>
 <member name="T:ProviderImplementation.ApiaryTypeBuilder">
 
@@ -1280,13 +1283,13 @@
 <member name="T:ProviderImplementation.JsonInference">
 
 </member>
-<member name="M:ProviderImplementation.JsonTypeBuilder.generateJsonType(System.String,ProviderImplementation.JsonGenerationContext,FSharp.Data.RuntimeImplementation.StructuralTypes.InferedType)">
+<member name="M:ProviderImplementation.JsonTypeBuilder.generateJsonType(System.String,ProviderImplementation.JsonGenerationContext,System.String,FSharp.Data.RuntimeImplementation.StructuralTypes.InferedType)">
 <summary>
  Recursively walks over inferred type information and 
  generates types for read-only access to the document
 </summary>
 </member>
-<member name="M:ProviderImplementation.JsonTypeBuilder.generateMultipleChoiceType(System.String,ProviderImplementation.JsonGenerationContext,Microsoft.FSharp.Collections.FSharpMap{FSharp.Data.RuntimeImplementation.StructuralTypes.InferedTypeTag,System.Tuple{FSharp.Data.RuntimeImplementation.StructuralTypes.InferedMultiplicity,FSharp.Data.RuntimeImplementation.StructuralTypes.InferedType}},Microsoft.FSharp.Core.FSharpFunc{System.Tuple{FSharp.Data.RuntimeImplementation.StructuralTypes.InferedMultiplicity,FSharp.Data.RuntimeImplementation.StructuralTypes.InferedType},Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Quotations.FSharpExpr,Microsoft.FSharp.Quotations.FSharpExpr},Microsoft.FSharp.Core.FSharpFunc{System.String,Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Collections.FSharpList{Microsoft.FSharp.Quotations.FSharpExpr},Microsoft.FSharp.Quotations.FSharpExpr}}}})">
+<member name="M:ProviderImplementation.JsonTypeBuilder.generateMultipleChoiceType(System.String,ProviderImplementation.JsonGenerationContext,System.String,Microsoft.FSharp.Collections.FSharpMap{FSharp.Data.RuntimeImplementation.StructuralTypes.InferedTypeTag,System.Tuple{FSharp.Data.RuntimeImplementation.StructuralTypes.InferedMultiplicity,FSharp.Data.RuntimeImplementation.StructuralTypes.InferedType}},Microsoft.FSharp.Core.FSharpFunc{System.Tuple{FSharp.Data.RuntimeImplementation.StructuralTypes.InferedMultiplicity,FSharp.Data.RuntimeImplementation.StructuralTypes.InferedType},Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Quotations.FSharpExpr,Microsoft.FSharp.Quotations.FSharpExpr},Microsoft.FSharp.Core.FSharpFunc{System.String,Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Collections.FSharpList{Microsoft.FSharp.Quotations.FSharpExpr},Microsoft.FSharp.Quotations.FSharpExpr}}}})">
 <summary>
  Common code that is shared by code generators that generate 
  &quot;Choice&quot; type. This is parameterized by the types (choices) to generate,
