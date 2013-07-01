@@ -606,45 +606,6 @@
 <member name="">
 
 </member>
-<member name="M:FSharp.Data.RuntimeImplementation.XmlElement.Create(System.Xml.Linq.XElement)">
-<summary>
- Creates a JsonDocument representing the specified value
-</summary>
-</member>
-<member name="T:FSharp.Data.RuntimeImplementation.XmlElement">
-<summary>
- Underlying representation of the generated XML types
-</summary>
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="T:FSharp.Data.RuntimeImplementation.XmlOperations">
-<summary>
- Static helper methods called from the generated code
-</summary>
-</member>
-<member name="">
-
-</member>
 <member name="">
 
 </member>
@@ -2575,7 +2536,7 @@
 <member name="">
 
 </member>
-<member name="M:FSharp.Net.Http.RequestDetailed``4(System.String,Microsoft.FSharp.Core.FSharpOption{``0},Microsoft.FSharp.Core.FSharpOption{``1},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{``2},Microsoft.FSharp.Core.FSharpOption{``3},Microsoft.FSharp.Core.FSharpOption{System.Net.CookieContainer})">
+<member name="M:FSharp.Net.Http.RequestDetailed``5(System.String,Microsoft.FSharp.Core.FSharpOption{``0},Microsoft.FSharp.Core.FSharpOption{``1},Microsoft.FSharp.Core.FSharpOption{``2},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{``3},Microsoft.FSharp.Core.FSharpOption{``4},Microsoft.FSharp.Core.FSharpOption{System.Net.CookieContainer})">
 <summary>
  Download an HTTP web resource from the specified URL synchronously
  (allows specifying query string parameters and HTTP headers including
@@ -2584,7 +2545,7 @@
  that will be encoded, and the method will automatically be set if not specified
 </summary>
 </member>
-<member name="M:FSharp.Net.Http.Request``4(System.String,Microsoft.FSharp.Core.FSharpOption{``0},Microsoft.FSharp.Core.FSharpOption{``1},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{``2},Microsoft.FSharp.Core.FSharpOption{``3},Microsoft.FSharp.Core.FSharpOption{System.Net.CookieContainer})">
+<member name="M:FSharp.Net.Http.Request``5(System.String,Microsoft.FSharp.Core.FSharpOption{``0},Microsoft.FSharp.Core.FSharpOption{``1},Microsoft.FSharp.Core.FSharpOption{``2},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{``3},Microsoft.FSharp.Core.FSharpOption{``4},Microsoft.FSharp.Core.FSharpOption{System.Net.CookieContainer})">
 <summary>
  Download an HTTP web resource from the specified URL synchronously
  (allows specifying query string parameters and HTTP headers including
@@ -2596,7 +2557,7 @@
 <member name="">
 
 </member>
-<member name="M:FSharp.Net.Http.AsyncRequestDetailed``4(System.String,Microsoft.FSharp.Core.FSharpOption{``0},Microsoft.FSharp.Core.FSharpOption{``1},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{``2},Microsoft.FSharp.Core.FSharpOption{``3},Microsoft.FSharp.Core.FSharpOption{System.Net.CookieContainer})">
+<member name="M:FSharp.Net.Http.AsyncRequestDetailed``5(System.String,Microsoft.FSharp.Core.FSharpOption{``0},Microsoft.FSharp.Core.FSharpOption{``1},Microsoft.FSharp.Core.FSharpOption{``2},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{``3},Microsoft.FSharp.Core.FSharpOption{``4},Microsoft.FSharp.Core.FSharpOption{System.Net.CookieContainer})">
 <summary>
  Download an HTTP web resource from the specified URL asynchronously
  (allows specifying query string parameters and HTTP headers including
@@ -2605,7 +2566,7 @@
  that will be encoded, and the method will automatically be set if not specified
 </summary>
 </member>
-<member name="M:FSharp.Net.Http.AsyncRequest``4(System.String,Microsoft.FSharp.Core.FSharpOption{``0},Microsoft.FSharp.Core.FSharpOption{``1},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{``2},Microsoft.FSharp.Core.FSharpOption{``3},Microsoft.FSharp.Core.FSharpOption{System.Net.CookieContainer})">
+<member name="M:FSharp.Net.Http.AsyncRequest``5(System.String,Microsoft.FSharp.Core.FSharpOption{``0},Microsoft.FSharp.Core.FSharpOption{``1},Microsoft.FSharp.Core.FSharpOption{``2},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{``3},Microsoft.FSharp.Core.FSharpOption{``4},Microsoft.FSharp.Core.FSharpOption{System.Net.CookieContainer})">
 <summary>
  Download an HTTP web resource from the specified URL asynchronously
  (allows specifying query string parameters and HTTP headers including
@@ -2953,53 +2914,6 @@
 <member name="">
 
 </member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="T:ProviderImplementation.XmlGenerationContext">
-<summary>
- Context that is used to generate the XML types.
-</summary>
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
-<member name="">
-
-</member>
 <member name="M:ProviderImplementation.ActivePatterns.|SingletonMap|_|``2(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{``0,``1}})">
 <summary>
  Takes dictionary or a map and succeeds if it contains exactly one value
@@ -3211,13 +3125,13 @@
 <member name="T:ProviderImplementation.JsonInference">
 
 </member>
-<member name="M:ProviderImplementation.JsonTypeBuilder.generateJsonType(System.String,ProviderImplementation.JsonGenerationContext,FSharp.Data.RuntimeImplementation.StructuralTypes.InferedType)">
+<member name="M:ProviderImplementation.JsonTypeBuilder.generateJsonType(System.String,ProviderImplementation.JsonGenerationContext,System.String,FSharp.Data.RuntimeImplementation.StructuralTypes.InferedType)">
 <summary>
  Recursively walks over inferred type information and 
  generates types for read-only access to the document
 </summary>
 </member>
-<member name="M:ProviderImplementation.JsonTypeBuilder.generateMultipleChoiceType(System.String,ProviderImplementation.JsonGenerationContext,Microsoft.FSharp.Collections.FSharpMap{FSharp.Data.RuntimeImplementation.StructuralTypes.InferedTypeTag,System.Tuple{FSharp.Data.RuntimeImplementation.StructuralTypes.InferedMultiplicity,FSharp.Data.RuntimeImplementation.StructuralTypes.InferedType}},Microsoft.FSharp.Core.FSharpFunc{System.Tuple{FSharp.Data.RuntimeImplementation.StructuralTypes.InferedMultiplicity,FSharp.Data.RuntimeImplementation.StructuralTypes.InferedType},Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Quotations.FSharpExpr,Microsoft.FSharp.Quotations.FSharpExpr},Microsoft.FSharp.Core.FSharpFunc{System.String,Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Collections.FSharpList{Microsoft.FSharp.Quotations.FSharpExpr},Microsoft.FSharp.Quotations.FSharpExpr}}}})">
+<member name="M:ProviderImplementation.JsonTypeBuilder.generateMultipleChoiceType(System.String,ProviderImplementation.JsonGenerationContext,System.String,Microsoft.FSharp.Collections.FSharpMap{FSharp.Data.RuntimeImplementation.StructuralTypes.InferedTypeTag,System.Tuple{FSharp.Data.RuntimeImplementation.StructuralTypes.InferedMultiplicity,FSharp.Data.RuntimeImplementation.StructuralTypes.InferedType}},Microsoft.FSharp.Core.FSharpFunc{System.Tuple{FSharp.Data.RuntimeImplementation.StructuralTypes.InferedMultiplicity,FSharp.Data.RuntimeImplementation.StructuralTypes.InferedType},Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Quotations.FSharpExpr,Microsoft.FSharp.Quotations.FSharpExpr},Microsoft.FSharp.Core.FSharpFunc{System.String,Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Collections.FSharpList{Microsoft.FSharp.Quotations.FSharpExpr},Microsoft.FSharp.Quotations.FSharpExpr}}}})">
 <summary>
  Common code that is shared by code generators that generate 
  &quot;Choice&quot; type. This is parameterized by the types (choices) to generate,
@@ -4096,55 +4010,6 @@
 </summary>
 </member>
 <member name="T:ProviderImplementation.StructureInference">
-
-</member>
-<member name="M:ProviderImplementation.XmlInference.inferType(System.IFormatProvider,System.Boolean,System.Xml.Linq.XElement)">
-<summary>
- A type is infered either using `inferLocalType` which only looks
- at immediate children or using `inferGlobalType` which unifies nodes
- of the same name in the entire document
-</summary>
-</member>
-<member name="M:ProviderImplementation.XmlInference.inferLocalType(System.IFormatProvider,System.Xml.Linq.XElement)">
-<summary>
- Get information about type locally (the type of children is infered
- recursively, so same elements in different positions have different types)
-</summary>
-</member>
-<member name="M:ProviderImplementation.XmlInference.inferGlobalType(System.IFormatProvider,System.Xml.Linq.XElement)">
-<summary>
- Infers type for the element, unifying nodes of the same name
- accross the entire document (we first get information based
- on just attributes and then use a fixed point)
-</summary>
-</member>
-<member name="M:ProviderImplementation.XmlInference.getAttributes(System.IFormatProvider,System.Xml.Linq.XElement)">
-<summary>
- Generates record fields for all attributes
-</summary>
-</member>
-<member name="T:ProviderImplementation.XmlInference">
-
-</member>
-<member name="M:ProviderImplementation.XmlTypeBuilder.generateXmlType(System.String,ProviderImplementation.XmlGenerationContext,FSharp.Data.RuntimeImplementation.StructuralTypes.InferedType)">
-<summary>
- Recursively walks over inferred type information and 
- generates types for read-only access to the document
-</summary>
-</member>
-<member name="M:ProviderImplementation.XmlTypeBuilder.|ContentType|_|(FSharp.Data.RuntimeImplementation.StructuralTypes.InferedProperty)">
-<summary>
- Recognizes different valid infered types of content:
-
-  - `Primitive` means that the content is a value and there are no children
-  - `Collection` means that there are always just children but no value
-  - `Heterogeneous` means that there may be either children or value(s)
-
- We return a list with all possible primitive types and all possible
- children types (both may be empty)
-</summary>
-</member>
-<member name="T:ProviderImplementation.XmlTypeBuilder">
 
 </member>
 </members>
