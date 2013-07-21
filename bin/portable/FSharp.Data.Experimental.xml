@@ -594,6 +594,24 @@
 <member name="">
 
 </member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
 <member name="T:FSharp.Data.RuntimeImplementation.StructuralTypes.InferedType">
 <summary>
  Represents inferred structural type. A type may be either primitive type

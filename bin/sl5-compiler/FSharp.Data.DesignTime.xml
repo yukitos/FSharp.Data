@@ -1887,6 +1887,24 @@
 <member name="">
 
 </member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
 <member name="T:FSharp.Data.RuntimeImplementation.StructuralTypes.InferedType">
 <summary>
  Represents inferred structural type. A type may be either primitive type
@@ -2865,6 +2883,9 @@
 <member name="">
 
 </member>
+<member name="">
+
+</member>
 <member name="T:ProviderImplementation.PrimitiveInferedProperty">
 <summary>
  Represents type information about primitive property (used mainly in the CSV provider)
@@ -3011,10 +3032,17 @@
 <member name="">
 
 </member>
-<member name="M:ProviderImplementation.CsvInference.getFields(FSharp.Data.RuntimeImplementation.StructuralTypes.InferedType,Microsoft.FSharp.Core.FSharpOption{ProviderImplementation.PrimitiveInferedProperty}[])">
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="M:ProviderImplementation.CsvInference.getFields(System.Boolean,FSharp.Data.RuntimeImplementation.StructuralTypes.InferedType,Microsoft.FSharp.Core.FSharpOption{ProviderImplementation.PrimitiveInferedProperty}[])">
 <summary>
  Generates the fields for a CSV row. The CSV provider should be
- numerical-friendly, so we do a few simple adjustments:
+ numerical-friendly, so we do a few simple adjustments.
+ When preferOptionals is false:
   
   - Fields of type &apos;int + null&apos; are generated as Nullable&lt;int&gt;
   - Fields of type &apos;int64 + null&apos; are generated as Nullable&lt;int64&gt;
@@ -3023,9 +3051,12 @@
   - Fields of type &apos;T + null&apos; for any other non-nullable T (bool/date/guid) become option&lt;T&gt;
   - All other types are simply strings.
 
+ When preferOptionals is true:
+  
+  - All fields of type &apos;T + null&apos; for any type become option&lt;T&gt;, incude strings
 </summary>
 </member>
-<member name="M:ProviderImplementation.CsvInference.inferType(FSharp.Data.Csv.CsvFile,System.Int32,System.Collections.Generic.IEnumerable{System.String},System.IFormatProvider,System.String)">
+<member name="M:ProviderImplementation.CsvInference.inferType(FSharp.Data.Csv.CsvFile,System.Int32,System.String[],System.IFormatProvider,System.String,System.Boolean,System.Boolean)">
 <summary>
  Infers the type of a CSV file using the specified number of rows
  (This handles units in the same way as the original MiniCSV provider)
@@ -3045,6 +3076,9 @@
  Parses type specification in the schema for a single column. 
  This can be of the form: type|measure|type&lt;measure&gt;
 </summary>
+</member>
+<member name="">
+
 </member>
 <member name="">
 
@@ -3114,7 +3148,7 @@
 <member name="T:ProviderImplementation.HttpUtility">
 
 </member>
-<member name="M:ProviderImplementation.JsonInference.inferType(System.IFormatProvider,FSharp.Data.Json.JsonValue)">
+<member name="M:ProviderImplementation.JsonInference.inferType(System.IFormatProvider,System.Boolean,FSharp.Data.Json.JsonValue)">
 <summary>
  Infer type of a JSON value - this is simple function because most of the
  functionality is handled in `StructureInference` (most notably, by
@@ -3911,26 +3945,26 @@
 <member name="T:ProviderImplementation.Seq">
 
 </member>
-<member name="M:ProviderImplementation.StructureInference.inferPrimitiveType(System.Collections.Generic.IEnumerable{System.String},System.IFormatProvider,System.String,Microsoft.FSharp.Core.FSharpOption{System.Type})">
+<member name="M:ProviderImplementation.StructureInference.inferPrimitiveType(System.IFormatProvider,System.String,Microsoft.FSharp.Core.FSharpOption{System.Type})">
 <summary>
  Infers the type of a simple string value (this is either
  the value inside a node or value of an attribute)
 </summary>
 </member>
-<member name="M:ProviderImplementation.StructureInference.inferCollectionType(System.Collections.Generic.IEnumerable{FSharp.Data.RuntimeImplementation.StructuralTypes.InferedType})">
+<member name="M:ProviderImplementation.StructureInference.inferCollectionType(System.Boolean,System.Collections.Generic.IEnumerable{FSharp.Data.RuntimeImplementation.StructuralTypes.InferedType})">
 <summary>
  Infer the type of the collection based on multiple sample types
  (group the types by tag, count their multiplicity)
 </summary>
 </member>
-<member name="M:ProviderImplementation.StructureInference.unionRecordTypes(Microsoft.FSharp.Collections.FSharpList{FSharp.Data.RuntimeImplementation.StructuralTypes.InferedProperty},Microsoft.FSharp.Collections.FSharpList{FSharp.Data.RuntimeImplementation.StructuralTypes.InferedProperty})">
+<member name="M:ProviderImplementation.StructureInference.unionRecordTypes(System.Boolean,Microsoft.FSharp.Collections.FSharpList{FSharp.Data.RuntimeImplementation.StructuralTypes.InferedProperty},Microsoft.FSharp.Collections.FSharpList{FSharp.Data.RuntimeImplementation.StructuralTypes.InferedProperty})">
 <summary>
  Get the union of record types (merge their properties)
  This matches the corresponding members and marks them as `Optional`
  if one may be missing. It also returns subtype of their types.
 </summary>
 </member>
-<member name="M:ProviderImplementation.StructureInference.unionCollectionTypes(Microsoft.FSharp.Collections.FSharpMap{FSharp.Data.RuntimeImplementation.StructuralTypes.InferedTypeTag,System.Tuple{FSharp.Data.RuntimeImplementation.StructuralTypes.InferedMultiplicity,FSharp.Data.RuntimeImplementation.StructuralTypes.InferedType}},Microsoft.FSharp.Collections.FSharpMap{FSharp.Data.RuntimeImplementation.StructuralTypes.InferedTypeTag,System.Tuple{FSharp.Data.RuntimeImplementation.StructuralTypes.InferedMultiplicity,FSharp.Data.RuntimeImplementation.StructuralTypes.InferedType}})">
+<member name="M:ProviderImplementation.StructureInference.unionCollectionTypes(System.Boolean,Microsoft.FSharp.Collections.FSharpMap{FSharp.Data.RuntimeImplementation.StructuralTypes.InferedTypeTag,System.Tuple{FSharp.Data.RuntimeImplementation.StructuralTypes.InferedMultiplicity,FSharp.Data.RuntimeImplementation.StructuralTypes.InferedType}},Microsoft.FSharp.Collections.FSharpMap{FSharp.Data.RuntimeImplementation.StructuralTypes.InferedTypeTag,System.Tuple{FSharp.Data.RuntimeImplementation.StructuralTypes.InferedMultiplicity,FSharp.Data.RuntimeImplementation.StructuralTypes.InferedType}})">
 <summary>
  A collection can contain multiple types - in that case, we do keep 
  the multiplicity for each different type tag to generate better types
@@ -3938,13 +3972,13 @@
  it also handles the multiplicity)
 </summary>
 </member>
-<member name="M:ProviderImplementation.StructureInference.unionHeterogeneousTypes(Microsoft.FSharp.Collections.FSharpMap{FSharp.Data.RuntimeImplementation.StructuralTypes.InferedTypeTag,FSharp.Data.RuntimeImplementation.StructuralTypes.InferedType},Microsoft.FSharp.Collections.FSharpMap{FSharp.Data.RuntimeImplementation.StructuralTypes.InferedTypeTag,FSharp.Data.RuntimeImplementation.StructuralTypes.InferedType})">
+<member name="M:ProviderImplementation.StructureInference.unionHeterogeneousTypes(System.Boolean,Microsoft.FSharp.Collections.FSharpMap{FSharp.Data.RuntimeImplementation.StructuralTypes.InferedTypeTag,FSharp.Data.RuntimeImplementation.StructuralTypes.InferedType},Microsoft.FSharp.Collections.FSharpMap{FSharp.Data.RuntimeImplementation.StructuralTypes.InferedTypeTag,FSharp.Data.RuntimeImplementation.StructuralTypes.InferedType})">
 <summary>
  Given two heterogeneous types, get a single type that can represent all the
  types that the two heterogeneous types can. For every tag, 
 </summary>
 </member>
-<member name="M:ProviderImplementation.StructureInference.subtypeInfered(FSharp.Data.RuntimeImplementation.StructuralTypes.InferedType,FSharp.Data.RuntimeImplementation.StructuralTypes.InferedType)">
+<member name="M:ProviderImplementation.StructureInference.subtypeInfered(System.Boolean,FSharp.Data.RuntimeImplementation.StructuralTypes.InferedType,FSharp.Data.RuntimeImplementation.StructuralTypes.InferedType)">
 <summary>
  Find common subtype of two infered types:
  
@@ -3967,12 +4001,18 @@
  Active pattern that calls `subtypePrimitives` on two primitive types
 </summary>
 </member>
-<member name="M:ProviderImplementation.StructureInference.subtypePrimitives(System.Type,System.Type)">
+<member name="">
+
+</member>
+<member name="P:ProviderImplementation.StructureInference.conversionTable">
 <summary>
  Find common subtype of two primitive types or `Bottom` if there is no such type.
  The numeric types are ordered as below, other types are not related in any way.
 
-   float :&gt; decimal :&gt; int64 :&gt; int
+   float :&gt; decimal :&gt; int64 :&gt; int :&gt; bit :&gt; bit0
+   float :&gt; decimal :&gt; int64 :&gt; int :&gt; bit :&gt; bit1
+   bool :&gt; bit :&gt; bit0
+   bool :&gt; bit :&gt; bit1
 
  This means that e.g. `int` is a subtype of `decimal` and so all `int` values
  are also `decimal` (and `float`) values, but not the other way round.
@@ -3989,16 +4029,18 @@
  Checks whether a type supports unit of measure
 </summary>
 </member>
-<member name="M:ProviderImplementation.StructureInference.isValueType(FSharp.Data.RuntimeImplementation.StructuralTypes.InferedType)">
+<member name="M:ProviderImplementation.StructureInference.supportsNull(FSharp.Data.RuntimeImplementation.StructuralTypes.InferedType)">
 <summary>
- Checks whether a type is a value type (and cannot have null as a value)
+ Checks whether a type can have null as a value
 </summary>
 </member>
 <member name="P:ProviderImplementation.StructureInference.primitiveTypes">
 <summary>
  List of primitive types that can be returned as a result of the inference
- (with names that are returned for heterogeneous types)
 </summary>
+</member>
+<member name="">
+
 </member>
 <member name="M:ProviderImplementation.StructureInference.pairBy``2(Microsoft.FSharp.Core.FSharpFunc{``0,``1},System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0})">
 <summary>
