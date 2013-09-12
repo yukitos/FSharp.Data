@@ -393,6 +393,9 @@
 <member name="">
 
 </member>
+<member name="">
+
+</member>
 <member name="M:FSharp.Data.RuntimeImplementation.CsvFile`1.Cache">
 <summary>
  Returns a new csv with the same rows as the original but which guarantees
@@ -602,6 +605,30 @@
 </member>
 <member name="">
 
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="">
+
+</member>
+<member name="T:FSharp.Data.RuntimeImplementation.ReentrantEnumerable`1">
+<summary>
+ An enumerable that will return elements from the &apos;firstSeq&apos; first time it
+ is accessed and then will call &apos;nextSeq&apos; each time for all future GetEnumerator calls
+</summary>
 </member>
 <member name="">
 
