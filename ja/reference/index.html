@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Namespaces - F# Data</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Tomas Petricek; Gustavo Guerra">
+
+    <script src="http://code.jquery.com/jquery-1.8.0.js"></script>
+    <script src="http://code.jquery.com/ui/1.8.23/jquery-ui.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/js/bootstrap.min.js"></script>
+    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/css/bootstrap-combined.min.css" rel="stylesheet">
+
+    <link type="text/css" rel="stylesheet" href="/FSharp.Data/ja/content/style.css" />
+    <script type="text/javascript" src="/FSharp.Data/ja/content/tips.js"></script>
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="masthead">
+        <ul class="nav nav-pills pull-right">
+          <li><a href="http://fsharp.org">fsharp.org</a></li>
+          <li><a href="http://github.com/fsharp/FSharp.Data">github page</a></li>
+          <li><a href="http://fsharp.github.io/FSharp.Charting/">F# Charting</a></li>
+          <li><a href="http://bluemountaincapital.github.io/Deedle">Deedle</a></li>
+          <li><a href="http://fsharp.github.io/fsharpx/">fsharpx</a></li>
+        </ul>
+        <h3 class="muted"><a href="/FSharp.Data/ja/index.html">F# Data</a></h3>
+      </div>
+      <hr />
+      <div class="row">
+        <div class="span9" id="main">
+          
+
+<h1>FSharp.Data</h1>
+
+  <h2>FSharp.Data</h2>
+  <div>
+      <table class="table table-bordered module-list">
+      <thead>
+        <tr><td>Module</td><td>Description</td></tr>
+      </thead>
+      <tbody>
+        <tr>
+		      <td class="module-name">
+            <a href="fsharp-data-freebaseoperators.html">FreebaseOperators</a>
+		      </td>
+          <td class="xmldoc"><p>Extension members for operations permitted in queries of the Freebase service</p>
+</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <h2>FSharp.Data.Csv</h2>
+  <div>
+    <table class="table table-bordered type-list">
+      <thead>
+        <tr><td>Type</td><td>Description</td></tr>
+      </thead>
+      <tbody>
+        <tr>
+		      <td class="type-name">
+            <a href="fsharp-data-csv-csvfile.html">CsvFile</a>
+		      </td>
+          <td class="xmldoc"><p>Represents a CSV file. The lines are read on demand from 'reader'.
+Columns are delimited by one of the chars passed by 'separators' (defaults to just ','), and
+to escape the separator chars, the 'quote' character will be used (defaults to '"').
+If 'hasHeaders' is true (the default), the first line read by 'reader' will not be considered part of data.
+If 'ignoreErrors' is true (the default is false), rows with a different number of columns from the header row
+(or the first row if headers are not present) will be ignored</p>
+</td>
+        </tr>
+        <tr>
+		      <td class="type-name">
+            <a href="fsharp-data-csv-csvrow.html">CsvRow</a>
+		      </td>
+          <td class="xmldoc"><p>Represents a CSV row</p>
+</td>
+        </tr>
+      </tbody>
+    </table>
+      <table class="table table-bordered module-list">
+      <thead>
+        <tr><td>Module</td><td>Description</td></tr>
+      </thead>
+      <tbody>
+        <tr>
+		      <td class="module-name">
+            <a href="fsharp-data-csv-extensions.html">Extensions</a>
+		      </td>
+          <td class="xmldoc"><p>Unsafe extension methods that can be used to work with CsvRow in a less safe, but shorter way.
+This module also provides the dynamic operator.</p>
+</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <h2>FSharp.Data.Json</h2>
+  <div>
+    <table class="table table-bordered type-list">
+      <thead>
+        <tr><td>Type</td><td>Description</td></tr>
+      </thead>
+      <tbody>
+        <tr>
+		      <td class="type-name">
+            <a href="fsharp-data-json-jsonvalue.html">JsonValue</a>
+		      </td>
+          <td class="xmldoc"><p>Represents a JSON value. Large numbers that do not fit in the 
+Decimal type are represented using the Float case, while
+smaller numbers are represented as decimals to avoid precision loss.</p>
+</td>
+        </tr>
+      </tbody>
+    </table>
+      <table class="table table-bordered module-list">
+      <thead>
+        <tr><td>Module</td><td>Description</td></tr>
+      </thead>
+      <tbody>
+        <tr>
+		      <td class="module-name">
+            <a href="fsharp-data-json-extensions.html">Extensions</a>
+		      </td>
+          <td class="xmldoc"><p>Unsafe extension methods that can be used to work with JsonValue in a less safe, but shorter way.
+This module also provides the dynamic operator.</p>
+</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <h2>FSharp.Data.Runtime</h2>
+  <div>
+    <table class="table table-bordered type-list">
+      <thead>
+        <tr><td>Type</td><td>Description</td></tr>
+      </thead>
+      <tbody>
+        <tr>
+		      <td class="type-name">
+            <a href="fsharp-data-runtime-jsonconversions.html">JsonConversions</a>
+		      </td>
+          <td class="xmldoc"><p>Conversions from JsonValue to string/int/int64/decimal/float/boolean/datetime/guid options</p>
+</td>
+        </tr>
+        <tr>
+		      <td class="type-name">
+            <a href="fsharp-data-runtime-textconversions.html">TextConversions</a>
+		      </td>
+          <td class="xmldoc"><p>Conversions from string to string/int/int64/decimal/float/boolean/datetime/guid options</p>
+</td>
+        </tr>
+      </tbody>
+    </table>
+      <table class="table table-bordered module-list">
+      <thead>
+        <tr><td>Module</td><td>Description</td></tr>
+      </thead>
+      <tbody>
+        <tr>
+		      <td class="module-name">
+            <a href="fsharp-data-runtime-csvinference.html">CsvInference</a>
+		      </td>
+          <td class="xmldoc"><p>Structural inference for CSV</p>
+</td>
+        </tr>
+        <tr>
+		      <td class="module-name">
+            <a href="fsharp-data-runtime-nameutils.html">NameUtils</a>
+		      </td>
+          <td class="xmldoc"><p>Tools for generating nice member names that follow F# &amp; .NET naming conventions</p>
+</td>
+        </tr>
+        <tr>
+		      <td class="module-name">
+            <a href="fsharp-data-runtime-structuralinference.html">StructuralInference</a>
+		      </td>
+          <td class="xmldoc"><p>Implements type inference for unstructured documents like XML or JSON</p>
+</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <h2>FSharp.Data.Runtime.Freebase</h2>
+  <div>
+    <table class="table table-bordered type-list">
+      <thead>
+        <tr><td>Type</td><td>Description</td></tr>
+      </thead>
+      <tbody>
+        <tr>
+		      <td class="type-name">
+            <a href="fsharp-data-runtime-freebase-freebaseobject.html">FreebaseObject</a>
+		      </td>
+          <td class="xmldoc"><p>Represents a single object drawn from Freebase.</p>
+</td>
+        </tr>
+        <tr>
+		      <td class="type-name">
+            <a href="fsharp-data-runtime-freebase-freebasesendingrequestargs.html">FreebaseSendingRequestArgs</a>
+		      </td>
+          <td class="xmldoc"><p>Arguments of the DataContext.SendingRequest event</p>
+</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  <h2>FSharp.Data.Runtime.StructuralTypes</h2>
+  <div>
+    <table class="table table-bordered type-list">
+      <thead>
+        <tr><td>Type</td><td>Description</td></tr>
+      </thead>
+      <tbody>
+        <tr>
+		      <td class="type-name">
+            <a href="fsharp-data-runtime-structuraltypes-bit.html">Bit</a>
+		      </td>
+          <td class="xmldoc"><p>dummy type to represent that only one of "0" and "1" were found
+will be generated as a 'bool', unless it's converted to another numerical type</p>
+</td>
+        </tr>
+        <tr>
+		      <td class="type-name">
+            <a href="fsharp-data-runtime-structuraltypes-bit0.html">Bit0</a>
+		      </td>
+          <td class="xmldoc"><p>dummy type to represent that only "0" was found.
+will be generated as 'int', unless it's converted to Bit</p>
+</td>
+        </tr>
+        <tr>
+		      <td class="type-name">
+            <a href="fsharp-data-runtime-structuraltypes-bit1.html">Bit1</a>
+		      </td>
+          <td class="xmldoc"><p>dummy type to represent that only "1" was found
+will be generated as 'int', unless it's converted to Bit</p>
+</td>
+        </tr>
+        <tr>
+		      <td class="type-name">
+            <a href="fsharp-data-runtime-structuraltypes-inferedmultiplicity.html">InferedMultiplicity</a>
+		      </td>
+          <td class="xmldoc"><p>For heterogeneous types (types that have multiple possible forms
+such as differently named XML nodes or records and arrays mixed together)
+this type represents the number of occurrences of individual forms</p>
+</td>
+        </tr>
+        <tr>
+		      <td class="type-name">
+            <a href="fsharp-data-runtime-structuraltypes-inferedproperty.html">InferedProperty</a>
+		      </td>
+          <td class="xmldoc"><p>A property of a record has a name and type and may be optional</p>
+</td>
+        </tr>
+        <tr>
+		      <td class="type-name">
+            <a href="fsharp-data-runtime-structuraltypes-inferedtype.html">InferedType</a>
+		      </td>
+          <td class="xmldoc"><p>Represents inferred structural type. A type may be either primitive type
+(one of those listed by <code>primitiveTypes</code>) or it can be collection, 
+(named) record and heterogeneous type. We also have <code>Null</code> type (which is
+a subtype of all non-primitive types) and universal <code>Top</code> type.</p>
+
+<ul>
+<li><p>For collection, we infer the types of different things that appear in 
+the collection and how many times they do.</p></li>
+<li><p>A heterogeneous type (sum type) is simply a choice containing one
+of multiple different possibilities</p></li>
+</ul>
+
+<p>Why is collection not simply a list of Heterogeneous types? If we used that
+we would lose information about multiplicity and so we would not be able
+to generate nicer types!</p>
+</td>
+        </tr>
+        <tr>
+		      <td class="type-name">
+            <a href="fsharp-data-runtime-structuraltypes-inferedtypetag.html">InferedTypeTag</a>
+		      </td>
+          <td class="xmldoc"><p>For heterogeneous types, this represents the tag that defines the form
+(that is either primitive type, collection, named record etc.)</p>
+</td>
+        </tr>
+        <tr>
+		      <td class="type-name">
+            <a href="fsharp-data-runtime-structuraltypes-primitiveinferedproperty.html">PrimitiveInferedProperty</a>
+		      </td>
+          <td class="xmldoc"><p>Represents type information about a primitive property (used mainly in the CSV provider)
+This type captures the type, unit of measure and handling of missing values (if we
+infer that the value may be missing, we can generate option<T> or nullable<T>)</p>
+</td>
+        </tr>
+        <tr>
+		      <td class="type-name">
+            <a href="fsharp-data-runtime-structuraltypes-typewrapper.html">TypeWrapper</a>
+		      </td>
+          <td class="xmldoc"></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  <h2>FSharp.Data.Runtime.WorldBank</h2>
+  <div>
+    <table class="table table-bordered type-list">
+      <thead>
+        <tr><td>Type</td><td>Description</td></tr>
+      </thead>
+      <tbody>
+        <tr>
+		      <td class="type-name">
+            <a href="fsharp-data-runtime-worldbank-country.html">Country</a>
+		      </td>
+          <td class="xmldoc"><p>Metadata for a Country</p>
+</td>
+        </tr>
+        <tr>
+		      <td class="type-name">
+            <a href="fsharp-data-runtime-worldbank-indicator.html">Indicator</a>
+		      </td>
+          <td class="xmldoc"><p>Indicator data</p>
+</td>
+        </tr>
+        <tr>
+		      <td class="type-name">
+            <a href="fsharp-data-runtime-worldbank-indicatordescription.html">IndicatorDescription</a>
+		      </td>
+          <td class="xmldoc"><p>Metadata for an Indicator</p>
+</td>
+        </tr>
+        <tr>
+		      <td class="type-name">
+            <a href="fsharp-data-runtime-worldbank-region.html">Region</a>
+		      </td>
+          <td class="xmldoc"><p>Metadata for a Region</p>
+</td>
+        </tr>
+        <tr>
+		      <td class="type-name">
+            <a href="fsharp-data-runtime-worldbank-topic.html">Topic</a>
+		      </td>
+          <td class="xmldoc"><p>Metadata for a Topic</p>
+</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  <h2>FSharp.Net</h2>
+  <div>
+    <table class="table table-bordered type-list">
+      <thead>
+        <tr><td>Type</td><td>Description</td></tr>
+      </thead>
+      <tbody>
+        <tr>
+		      <td class="type-name">
+            <a href="fsharp-net-http.html">Http</a>
+		      </td>
+          <td class="xmldoc"><p>Utilities for working with network via HTTP. Includes methods for downloading 
+resources with specified headers, query parameters and HTTP body</p>
+</td>
+        </tr>
+        <tr>
+		      <td class="type-name">
+            <a href="fsharp-net-httpresponse.html">HttpResponse</a>
+		      </td>
+          <td class="xmldoc"><p>The response returned by an HTTP request</p>
+</td>
+        </tr>
+        <tr>
+		      <td class="type-name">
+            <a href="fsharp-net-requestbody.html">RequestBody</a>
+		      </td>
+          <td class="xmldoc"><p>The body to send in an HTTP request</p>
+</td>
+        </tr>
+        <tr>
+		      <td class="type-name">
+            <a href="fsharp-net-responsebody.html">ResponseBody</a>
+		      </td>
+          <td class="xmldoc"><p>The response body returned by an HTTP request</p>
+</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+        </div>
+        <div class="span3">
+          <a href="/FSharp.Data/ja/index.html">
+            <img src="/FSharp.Data/ja/images/logo.png" style="width:140px;height:140px;margin:10px 0px 0px 35px;border-style:none;" />
+          </a>
+
+          <ul class="nav nav-list" id="menu">
+            <li class="nav-header">F# Data</li>
+            <li class="divider"></li>
+            <li><a href="https://nuget.org/packages/FSharp.Data">NuGet経由でライブラリを取得</a></li>
+            <li><a href="http://github.com/fsharp/FSharp.Data">GitHub上のソースコード</a></li>
+            <li><a href="http://github.com/fsharp/FSharp.Data/blob/master/LICENSE.md">License (Apache 2.0)</a></li>
+            <li><a href="http://github.com/fsharp/FSharp.Data/blob/master/RELEASE_NOTES.md">リリースノート</a></li>
+            <li><span>
+                <a href="/FSharp.Data/ja/contributing.html">F# Dataに貢献する</a>
+                (<a href="/FSharp.Data/ja/../contributing.html">En</a>)
+                </span></li>
+            
+            <li class="nav-header">F# Data ライブラリ</li>
+            <li><span>
+                <a href="/FSharp.Data/ja/fsharpdata.html">はじめに</a>
+                (<a href="/FSharp.Data/ja/fsharpdata.html">En</a>)
+                </span></li>
+            <li class="divider"></li>
+            <li><span>
+                <a href="/FSharp.Data/ja/library/JsonProvider.html">JSON 型プロバイダー</a>
+                (<a href="/FSharp.Data/ja/library/JsonProvider.html">En</a>)
+                </span></li>
+            <li><span>
+                <a href="/FSharp.Data/ja/library/XmlProvider.html">XML 型プロバイダー</a>
+                (<a href="/FSharp.Data/ja/library/XmlProvider.html">En</a>)
+                </span></li>
+            <li><span>
+                <a href="/FSharp.Data/ja/library/CsvProvider.html">CSV 型プロバイダー</a>
+                (<a href="/FSharp.Data/ja/library/CsvProvider.html">En</a>)
+                </span></li>
+            <li><span>
+                <a href="/FSharp.Data/ja/library/WorldBank.html">WorldBank プロバイダー</a>
+                (<a href="/FSharp.Data/ja/library/WorldBank.html">En</a>)
+                </span></li>
+            <li><span>
+                <a href="/FSharp.Data/ja/library/Freebase.html">Freebase プロバイダー</a>
+                (<a href="/FSharp.Data/ja/library/Freebase.html">En</a>)
+                </span></li>
+            <li class="divider"></li>
+            <li><span>
+                <a href="/FSharp.Data/ja/library/JsonValue.html">JSON パーサーおよびリーダー</a>
+                (<a href="/FSharp.Data/ja/library/JsonValue.html">En</a>)
+                </span></li>
+            <li><span>
+                <a href="/FSharp.Data/ja/library/CsvFile.html">CSV パーサーおよびリーダー</a>
+                (<a href="/FSharp.Data/ja/library/CsvFile.html">En</a>)
+                </span></li>
+            <li><span>
+                <a href="/FSharp.Data/ja/library/Http.html">HTTP ユーティリティ</a>
+                (<a href="/FSharp.Data/ja/library/Http.html">En</a>)
+                </span></li>
+            <li><span>
+                <a href="/FSharp.Data/ja/reference/index.html">API リファレンス</a>
+                (<a href="/FSharp.Data/ja/reference/index.html">En</a>)
+                </span></li>
+
+            <li class="nav-header">F# Data 試験用ライブラリ</li>
+            <li><span>
+                <a href="/FSharp.Data/ja/experimental.html">はじめに</a>
+                (<a href="/FSharp.Data/ja/experimental.html">En</a>)
+                </span></li>
+            <li><span>
+                <a href="/FSharp.Data/ja/experimental/ApiaryProvider.html">Apiary 型プロバイダー</a>
+                (<a href="/FSharp.Data/ja/experimental/ApiaryProvider.html">En</a>)
+                </span></li>
+
+            <li class="nav-header">リファレンス</li>
+            <li><span>
+                <a href="/FSharp.Data/ja/reference/index.html">API リファレンス</a>
+                (<a href="/FSharp.Data/ja/reference/index.html">En</a>)
+                </span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <a href="http://github.com/fsharp/FSharp.Data"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
+  </body>
+  </html>
