@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>F# Data: JSON Parser and Reader
+    <title>F# Data: JSON パーサーおよびリーダー
 </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="The F# Data library implements type providers for working with structured file formats (CSV, JSON and XML) and for accessing the WorldBank and Freebase data. It also includes helpers for other data-related tasks.">
@@ -36,20 +36,25 @@
       <div class="row">
         <div class="span9" id="main">
           
-<h1>F# Data: JSON Parser and Reader</h1>
+<h1>F# Data: JSON パーサーおよびリーダー</h1>
 
-<p>The F# <a href="JsonProvider.html">JSON Type Provider</a> is built on top of an efficient JSON parser written
-in F#. This parser is based on a JSON parser available in <a href="http://fsharp3sample.codeplex.com">F# 3.0 Sample Pack</a>, 
-but F# Data adds a simple API that can be used to access values dynamically.</p>
+<p>F#の <a href="JsonProvider.html">JSON 型プロバイダー</a> はF#で作成された
+効率の良いJSONパーサーを元にしています。
+このパーサーは <a href="http://fsharp3sample.codeplex.com">F# 3.0 Sample Pack</a>
+内にあるJSONパーサーを元にしていますが、
+F# Dataでは値を動的にアクセスできるようにするための単純なAPIが追加されています。</p>
 
-<p>When working with well-defined JSON documents, it is easier to use the 
-<a href="JsonProvider.html">type provider</a>, but in a more dynamic scenario or when writing
-quick and simple scripts, the parser might be a simpler option.</p>
+<p>厳密に定義されたJSONドキュメントを処理する場合、
+<a href="JsonProvider.html">型プロバイダー</a> を使うと簡単なのですが、
+動的に処理するようなシナリオであったり、
+単純なスクリプトを手軽に用意したいような場合には
+パーサーを使ったほうが簡単でしょう。</p>
 
-<h2>Loading JSON documents</h2>
+<h2>JSONドキュメントの読み取り</h2>
 
-<p>To load a sample JSON document, we first need to reference the <code>FSharp.Data.dll</code> library
-(when using F# Interactive) or to add reference to a project.</p>
+<p>サンプルとなるJSONドキュメントを読み取るには
+(F# Interactiveの場合)<code>FSharp.Data.dll</code> ライブラリへの参照を追加するか、
+プロジェクトで参照を追加します。</p>
 
 <table class="pre"><tr><td class="lines"><pre class="fssnip">
 <span class="l">1: </span>
@@ -57,14 +62,14 @@ quick and simple scripts, the parser might be a simpler option.</p>
 </pre>
 </td>
 <td class="snippet"><pre class="fssnip">
-<span class="prep">#r</span> <span class="s">&quot;</span><span class="s">.</span><span class="s">.</span><span class="s">/</span><span class="s">.</span><span class="s">.</span><span class="s">/</span><span class="s">.</span><span class="s">.</span><span class="s">/</span><span class="s">bin</span><span class="s">/</span><span class="s">FSharp</span><span class="s">.</span><span class="s">Data</span><span class="s">.</span><span class="s">dll</span><span class="s">&quot;</span>
-<span class="k">open</span> <span class="i">FSharp</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs1', 1)" onmouseover="showTip(event, 'fs1', 1)" class="i">Data</span><span class="o">.</span><span class="i">Json</span></pre>
+<span class="prep">#r</span> <span class="s">&quot;</span><span class="s">.</span><span class="s">.</span><span class="s">/</span><span class="s">.</span><span class="s">.</span><span class="s">/</span><span class="s">.</span><span class="s">.</span><span class="s">/</span><span class="s">.</span><span class="s">.</span><span class="s">/</span><span class="s">bin</span><span class="s">/</span><span class="s">FSharp</span><span class="s">.</span><span class="s">Data</span><span class="s">.</span><span class="s">dll</span><span class="s">&quot;</span>
+<span class="k">open</span> <span onmouseout="hideTip(event, 'fs1', 1)" onmouseover="showTip(event, 'fs1', 1)" class="i">FSharp</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs2', 2)" onmouseover="showTip(event, 'fs2', 2)" class="i">Data</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs3', 3)" onmouseover="showTip(event, 'fs3', 3)" class="i">Json</span></pre>
 </td>
 </tr>
 </table>
 
-<p>The <code>FSharp.Data.Json</code> namespace contains the <code>JsonValue</code> type that can be used
-to parse strings formatted using JSON as follows:</p>
+<p><code>FShapr.Data.Json</code> 名前空間にある <code>JsonValue</code> 型を使うと、
+以下のようにしてJSON形式の文字列をパースできます：</p>
 
 <table class="pre"><tr><td class="lines"><pre class="fssnip">
 <span class="l">1: </span>
@@ -74,52 +79,53 @@ to parse strings formatted using JSON as follows:</p>
 </pre>
 </td>
 <td class="snippet"><pre class="fssnip">
-<span class="k">let</span> <span onmouseout="hideTip(event, 'fs2', 2)" onmouseover="showTip(event, 'fs2', 2)" class="i">info</span> <span class="o">=</span>
-  <span class="i">JsonValue</span><span class="o">.</span><span class="i">Parse</span>(<span class="s">&quot;&quot;&quot;</span><span class="s"> </span>
+<span class="k">let</span> <span onmouseout="hideTip(event, 'fs4', 4)" onmouseover="showTip(event, 'fs4', 4)" class="i">info</span> <span class="o">=</span>
+  <span onmouseout="hideTip(event, 'fs5', 5)" onmouseover="showTip(event, 'fs5', 5)" class="i">JsonValue</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs6', 6)" onmouseover="showTip(event, 'fs6', 6)" class="i">Parse</span>(<span class="s">&quot;&quot;&quot;</span><span class="s"> </span>
 <span class="s">    </span><span class="s">{</span><span class="s"> </span><span class="s">&quot;</span><span class="s">name</span><span class="s">&quot;</span><span class="s">:</span><span class="s"> </span><span class="s">&quot;</span><span class="s">Tomas</span><span class="s">&quot;</span><span class="s">,</span><span class="s"> </span><span class="s">&quot;</span><span class="s">born</span><span class="s">&quot;</span><span class="s">:</span><span class="s"> </span><span class="s">1985</span><span class="s">,</span>
 <span class="s">      </span><span class="s">&quot;</span><span class="s">siblings</span><span class="s">&quot;</span><span class="s">:</span><span class="s"> </span><span class="s">[</span><span class="s"> </span><span class="s">&quot;</span><span class="s">Jan</span><span class="s">&quot;</span><span class="s">,</span><span class="s"> </span><span class="s">&quot;</span><span class="s">Alexander</span><span class="s">&quot;</span><span class="s"> </span><span class="s">]</span><span class="s"> </span><span class="s">}</span><span class="s"> </span><span class="s">&quot;&quot;&quot;</span>)</pre>
 </td>
 </tr>
 </table>
 
-<p>The parsed value can be processed using pattern matching - the <code>JsonValue</code> type
-is a discriminated union with cases such as <code>Record</code>, <code>Collection</code> and other that
-can be used to examine the structure.</p>
+<p><code>JsonValue</code> 型は <code>Record</code> や <code>Collection</code> などのケースを持った判別共用体なので
+パターンマッチを使ってパース後の値の構造を調査することができます。</p>
 
-<h2>Using JSON extensions</h2>
+<h2>JSON用拡張機能を使用する</h2>
 
-<p>We do not cover this technique in this introduction. Instead, we look at a number
-of extensions that become available after opening the <code>FSharp.Data.Json.Extensions</code> 
-namespace. Once opened, we can write:</p>
+<p>ここではすべての機能を紹介しません。
+その代わり、 <code>FSharp.Data.Json.Extensions</code> 名前空間をオープンすることで
+利用できるようになるいくつかの拡張機能について説明します。
+この名前空間をオープンすると、以下のような記述ができるようになります：</p>
 
 <ul>
-<li><code>value.AsBoolean()</code> returns the value as boolean if it is either <code>true</code> or <code>false</code></li>
-<li><code>value.AsInteger()</code> returns the value as integer if it is numeric and can be
-converted to an integer; <code>value.AsInteger64()</code>, <code>value.AsDecimal()</code> and
-<code>value.AsFloat()</code> behave similarly.</li>
-<li><code>value.AsString()</code> returns the value as a string</li>
-<li><code>value.AsDateTime()</code> parse the string as a <code>DateTime</code> value using either the
-<a href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> format, or using the
-<code>\/Date(...)\/</code> JSON format containing number of milliseconds since 1/1/1970.</li>
-<li><code>value.AsGuid()</code> parse the string as a <code>Guid</code> value.</li>
-<li><code>value?child</code> uses the dynamic operator to obtain a record member named <code>child</code>;
-alternatively, you can also use <code>value.GetProperty(child)</code> or an indexer
-<code>value.[child]</code>.</li>
-<li><code>value.TryGetProperty(child)</code> can be used to safely obtain a record member 
-(if the member is missing or the value is not a record then, <code>TryGetProperty</code>
-returns <code>None</code>).</li>
-<li><code>[ for v in value -&gt; v ]</code> treats <code>value</code> as a collection and iterates over it;
-alternatively, it is possible to cobtain all elements as an array using
-<code>value.AsArray()</code>.</li>
-<li><code>value.Properties</code> returns a list of all properties of a record node</li>
-<li><code>value.InnerText</code> concatenates all text or text in an array 
-(representing e.g. multi-line string)</li>
+<li><code>value.AsBoolean()</code> は値が <code>true</code> または <code>false</code> の場合にブール値を返します。</li>
+<li><code>value.AsInteger()</code> は値が数値型で、整数として変換可能であれば整数値を返します。
+同様に <code>value.AsInteger64()</code> <code>value.AsDecimal()</code> <code>value.AsFloat()</code>
+といったものもあります。</li>
+<li><code>value.AsString()</code> は値を文字列として返します。</li>
+<li><code>value.AsDateTime()</code> は値を <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> か、
+1970/1/1からのミリ秒を含んだJSON形式の <code>\/Date(...)\/</code> でパースして
+<code>DateTime</code> を返します。</li>
+<li><code>value.AsGuid()</code> は値を <code>Guid</code> としてパースします。</li>
+<li><code>value?child</code> は <code>child</code> という名前のレコードメンバーを
+取得するための動的演算子です。
+あるいは <code>value.GetProperty(child)</code> やインデクサ <code>value.[child]</code>
+を使うこともできます。</li>
+<li><code>value.TryGetProperty(child)</code> はレコードメンバーを安全に取得できます
+(もしメンバーが値無しあるいはレコードではなかった場合、 <code>TryGetProperty</code> は
+<code>None</code> を返します)。</li>
+<li><code>[ for v in value -&gt; v ]</code> とすると <code>value</code> をコレクションとして扱い、
+含まれている要素を走査します。
+また、 <code>value.AsArray()</code> とすると、すべての要素を配列として取得できます。</li>
+<li><code>value.Properties</code> はレコードノードの全プロパティのリストを返します。</li>
+<li><code>value.InnerText</code> はすべてのテキストあるいは配列内のテキスト
+(たとえば複数行文字列を表すデータ)を連結します</li>
 </ul>
 
-<p>Methods that may need to parse a numeric value or date (such as <code>AsFloat</code> and
-<code>AsDateTime</code>) receive an optional culture parameter.</p>
+<p>数値または日付データとしてパースする( <code>AsFloat</code> や <code>AsDateTime</code> などの)メソッドには
+省略可能な引数としてカルチャを指定出来ます。</p>
 
-<p>The following example shows how to process the sample JSON value:</p>
+<p>以下のコードはサンプルで指定したJSONの値を処理する方法の一例です：</p>
 
 <table class="pre"><tr><td class="lines"><pre class="fssnip">
 <span class="l">1: </span>
@@ -134,30 +140,32 @@ alternatively, it is possible to cobtain all elements as an array using
 </pre>
 </td>
 <td class="snippet"><pre class="fssnip">
-<span class="k">open</span> <span class="i">FSharp</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs1', 3)" onmouseover="showTip(event, 'fs1', 3)" class="i">Data</span><span class="o">.</span><span class="i">Json</span><span class="o">.</span><span class="i">Extensions</span>
+<span class="k">open</span> <span onmouseout="hideTip(event, 'fs1', 7)" onmouseover="showTip(event, 'fs1', 7)" class="i">FSharp</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs2', 8)" onmouseover="showTip(event, 'fs2', 8)" class="i">Data</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs3', 9)" onmouseover="showTip(event, 'fs3', 9)" class="i">Json</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs7', 10)" onmouseover="showTip(event, 'fs7', 10)" class="i">Extensions</span>
 
-<span class="c">// Print name and birth year</span>
-<span class="k">let</span> <span onmouseout="hideTip(event, 'fs3', 4)" onmouseover="showTip(event, 'fs3', 4)" class="i">n</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs2', 5)" onmouseover="showTip(event, 'fs2', 5)" class="i">info</span><span class="o">?</span><span class="i">name</span>
-<span onmouseout="hideTip(event, 'fs4', 6)" onmouseover="showTip(event, 'fs4', 6)" class="i">printfn</span> <span class="s">&quot;</span><span class="s">%</span><span class="s">s</span><span class="s"> </span><span class="s">(</span><span class="s">%</span><span class="s">d</span><span class="s">)</span><span class="s">&quot;</span> (<span onmouseout="hideTip(event, 'fs2', 7)" onmouseover="showTip(event, 'fs2', 7)" class="i">info</span><span class="o">?</span><span class="i">name</span><span class="o">.</span><span class="i">AsString</span>()) (<span onmouseout="hideTip(event, 'fs2', 8)" onmouseover="showTip(event, 'fs2', 8)" class="i">info</span><span class="o">?</span><span class="i">born</span><span class="o">.</span><span class="i">AsInteger</span>())
+<span class="c">// 名前と誕生日を表示</span>
+<span class="k">let</span> <span onmouseout="hideTip(event, 'fs8', 11)" onmouseover="showTip(event, 'fs8', 11)" class="i">n</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs4', 12)" onmouseover="showTip(event, 'fs4', 12)" class="i">info</span><span class="o">?</span><span class="i">name</span>
+<span onmouseout="hideTip(event, 'fs9', 13)" onmouseover="showTip(event, 'fs9', 13)" class="i">printfn</span> <span class="s">&quot;</span><span class="s">%</span><span class="s">s</span><span class="s"> </span><span class="s">(</span><span class="s">%</span><span class="s">d</span><span class="s">)</span><span class="s">&quot;</span> (<span onmouseout="hideTip(event, 'fs4', 14)" onmouseover="showTip(event, 'fs4', 14)" class="i">info</span><span class="o">?</span><span class="i">name</span><span class="o">.</span><span class="i">AsString</span>()) (<span onmouseout="hideTip(event, 'fs4', 15)" onmouseover="showTip(event, 'fs4', 15)" class="i">info</span><span class="o">?</span><span class="i">born</span><span class="o">.</span><span class="i">AsInteger</span>())
 
-<span class="c">// Print names of all siblings</span>
-<span class="k">for</span> <span onmouseout="hideTip(event, 'fs5', 9)" onmouseover="showTip(event, 'fs5', 9)" class="i">sib</span> <span class="k">in</span> <span onmouseout="hideTip(event, 'fs2', 10)" onmouseover="showTip(event, 'fs2', 10)" class="i">info</span><span class="o">?</span><span class="i">siblings</span> <span class="k">do</span>
-  <span onmouseout="hideTip(event, 'fs4', 11)" onmouseover="showTip(event, 'fs4', 11)" class="i">printfn</span> <span class="s">&quot;</span><span class="s">%</span><span class="s">s</span><span class="s">&quot;</span> (<span onmouseout="hideTip(event, 'fs5', 12)" onmouseover="showTip(event, 'fs5', 12)" class="i">sib</span><span class="o">.</span><span class="i">AsString</span>())</pre>
+<span class="c">// 兄弟姉妹全員の名前を表示</span>
+<span class="k">for</span> <span onmouseout="hideTip(event, 'fs10', 16)" onmouseover="showTip(event, 'fs10', 16)" class="i">sib</span> <span class="k">in</span> <span onmouseout="hideTip(event, 'fs4', 17)" onmouseover="showTip(event, 'fs4', 17)" class="i">info</span><span class="o">?</span><span class="i">siblings</span> <span class="k">do</span>
+  <span onmouseout="hideTip(event, 'fs9', 18)" onmouseover="showTip(event, 'fs9', 18)" class="i">printfn</span> <span class="s">&quot;</span><span class="s">%</span><span class="s">s</span><span class="s">&quot;</span> (<span onmouseout="hideTip(event, 'fs10', 19)" onmouseover="showTip(event, 'fs10', 19)" class="i">sib</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs11', 20)" onmouseover="showTip(event, 'fs11', 20)" class="i">AsString</span>())</pre>
 </td>
 </tr>
 </table>
 
-<p>Note that the <code>JsonValue</code> type does not actually implement the <code>IEnumerable&lt;'T&gt;</code> 
-namespace (meaning that it cannot be passed to <code>Seq.xyz</code> functions). It only has
-the <code>GetEnumerator</code> method, which makes it possible to use it in sequence expressions
-and with the <code>for</code> loop.</p>
+<p><code>JsonValue</code> 型は実際には <code>IEnumerable&lt;'T&gt;</code> インターフェイスを
+実装しているわけではありません(つまり <code>Seq.xyz</code> 関数に渡す事はできません)。
+<code>GetEnumerator</code> だけが定義されているため、シーケンス式内や
+<code>for</code> ループで使うことができるというわけです。</p>
 
-<h2>Parsing WorldBank response</h2>
+<h2>WorldBankからのレスポンスをパースする</h2>
 
-<p>To look at a more complex example, consider a sample document 
-<a href="../data/WorldBank.json"><code>data/WorldBank.json</code></a> which was obtained as a response to 
-a WorldBank request (you can access the WorldBank data more conveniently using
-<a href="WorldBank.html">a type provider</a>). The document looks as follows:</p>
+<p>もう少し複雑な例として、WorldBankへのリクエストに対する
+レスポンスデータ <a href="../data/WorldBank.json"><code>data/WorldBank.json</code></a> を
+サンプルドキュメントにしてみます。
+(より便利な方法としては <a href="WorldBank.html">型プロバイダー</a> を使って
+WorldBankにアクセスすることもできます)。
+このドキュメントは以下のようになっています：</p>
 
 <pre><code>[ { "page": 1, "pages": 1, "total": 53 },
   [ { "indicator": {"value": "Central government debt, total (% of GDP)"},
@@ -168,36 +176,38 @@ a WorldBank request (you can access the WorldBank data more conveniently using
       "value":"16.6567773464055","decimal":"1","date":"2010"} ] ]
 </code></pre>
 
-<p>The document is formed by an array that contains record as the first element
-and a collection of data points as the second element. The following code
-reads the document and parses it:</p>
+<p>このように、全体としては配列になっていて、
+1番目の要素にはレコード、2番目の要素にはデータ点のコレクションが
+含まれた形式になっています。
+このドキュメントは以下のようにして読み取りおよびパースできます：</p>
 
 <table class="pre"><tr><td class="lines"><pre class="fssnip">
 <span class="l">1: </span>
 </pre>
 </td>
 <td class="snippet"><pre class="fssnip">
-<span class="k">let</span> <span onmouseout="hideTip(event, 'fs6', 13)" onmouseover="showTip(event, 'fs6', 13)" class="i">value</span> <span class="o">=</span> <span class="i">JsonValue</span><span class="o">.</span><span class="i">Load</span>(<span class="k">__SOURCE_DIRECTORY__</span> <span class="o">+</span> <span class="s">&quot;</span><span class="s">.</span><span class="s">.</span><span class="s">/</span><span class="s">data</span><span class="s">/</span><span class="s">WorldBank</span><span class="s">.</span><span class="s">json</span><span class="s">&quot;</span>)</pre>
+<span class="k">let</span> <span onmouseout="hideTip(event, 'fs12', 21)" onmouseover="showTip(event, 'fs12', 21)" class="i">value</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs5', 22)" onmouseover="showTip(event, 'fs5', 22)" class="i">JsonValue</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs13', 23)" onmouseover="showTip(event, 'fs13', 23)" class="i">Load</span>(<span class="k">__SOURCE_DIRECTORY__</span> <span class="o">+</span> <span class="s">&quot;</span><span class="s">.</span><span class="s">.</span><span class="s">/</span><span class="s">data</span><span class="s">/</span><span class="s">WorldBank</span><span class="s">.</span><span class="s">json</span><span class="s">&quot;</span>)</pre>
 </td>
 </tr>
 </table>
 
-<p>Note that we can also load the data directly from the web, and there's an
-asynchronous version available too: *</p>
+<p>なおWeb上から直接データを読み取ることもできます。
+また、読み取りを非同期的に実行するバージョンもあります：
+*</p>
 
 <table class="pre"><tr><td class="lines"><pre class="fssnip">
 <span class="l">1: </span>
 </pre>
 </td>
 <td class="snippet"><pre class="fssnip">
-<span class="k">let</span> <span onmouseout="hideTip(event, 'fs7', 14)" onmouseover="showTip(event, 'fs7', 14)" class="i">valueAsync</span> <span class="o">=</span> <span class="i">JsonValue</span><span class="o">.</span><span class="i">AsyncLoad</span>(<span class="s">&quot;</span><span class="s">http</span><span class="s">:</span><span class="s">/</span><span class="s">/</span><span class="s">api</span><span class="s">.</span><span class="s">worldbank</span><span class="s">.</span><span class="s">org</span><span class="s">/</span><span class="s">country</span><span class="s">/</span><span class="s">cz</span><span class="s">/</span><span class="s">indicator</span><span class="s">/</span><span class="s">GC</span><span class="s">.</span><span class="s">DOD</span><span class="s">.</span><span class="s">TOTL</span><span class="s">.</span><span class="s">GD</span><span class="s">.</span><span class="s">ZS</span><span class="s">?</span><span class="s">format</span><span class="s">=</span><span class="s">json</span><span class="s">&quot;</span>)</pre>
+<span class="k">let</span> <span onmouseout="hideTip(event, 'fs14', 24)" onmouseover="showTip(event, 'fs14', 24)" class="i">valueAsync</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs5', 25)" onmouseover="showTip(event, 'fs5', 25)" class="i">JsonValue</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs15', 26)" onmouseover="showTip(event, 'fs15', 26)" class="i">AsyncLoad</span>(<span class="s">&quot;</span><span class="s">http</span><span class="s">:</span><span class="s">/</span><span class="s">/</span><span class="s">api</span><span class="s">.</span><span class="s">worldbank</span><span class="s">.</span><span class="s">org</span><span class="s">/</span><span class="s">country</span><span class="s">/</span><span class="s">cz</span><span class="s">/</span><span class="s">indicator</span><span class="s">/</span><span class="s">GC</span><span class="s">.</span><span class="s">DOD</span><span class="s">.</span><span class="s">TOTL</span><span class="s">.</span><span class="s">GD</span><span class="s">.</span><span class="s">ZS</span><span class="s">?</span><span class="s">format</span><span class="s">=</span><span class="s">json</span><span class="s">&quot;</span>)</pre>
 </td>
 </tr>
 </table>
 
-<p>To split the top-level array into the first record (with overall information) 
-and the collection of data points, we use pattern matching and match the <code>value</code>
-against the <code>JsonValue.Array</code> constructor:</p>
+<p>最上位の配列を1番目の(概要を含んだ)レコードとデータ点のコレクションに分けるためには
+<code>value</code> に対してパターンマッチを使って
+<code>Jsonvalue.Array</code> のコンストラクタとマッチするかどうか調べます：</p>
 
 <table class="pre"><tr><td class="lines"><pre class="fssnip">
 <span class="l"> 1: </span>
@@ -217,51 +227,73 @@ against the <code>JsonValue.Array</code> constructor:</p>
 </pre>
 </td>
 <td class="snippet"><pre class="fssnip">
-<span class="k">match</span> <span onmouseout="hideTip(event, 'fs6', 15)" onmouseover="showTip(event, 'fs6', 15)" class="i">value</span> <span class="k">with</span>
-| <span class="i">JsonValue</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs8', 16)" onmouseover="showTip(event, 'fs8', 16)" class="i">Array</span> [| <span onmouseout="hideTip(event, 'fs2', 17)" onmouseover="showTip(event, 'fs2', 17)" class="i">info</span>; <span class="i">data</span> |] <span class="k">-&gt;</span>
-    <span class="c">// Print overall information</span>
-    <span class="k">let</span> <span class="i">page</span>, <span class="i">pages</span>, <span class="i">total</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs2', 18)" onmouseover="showTip(event, 'fs2', 18)" class="i">info</span><span class="o">?</span><span class="i">page</span>, <span onmouseout="hideTip(event, 'fs2', 19)" onmouseover="showTip(event, 'fs2', 19)" class="i">info</span><span class="o">?</span><span class="i">pages</span>, <span onmouseout="hideTip(event, 'fs2', 20)" onmouseover="showTip(event, 'fs2', 20)" class="i">info</span><span class="o">?</span><span class="i">total</span>
-    <span onmouseout="hideTip(event, 'fs4', 21)" onmouseover="showTip(event, 'fs4', 21)" class="i">printfn</span> 
-      <span class="s">&quot;</span><span class="s">Showing</span><span class="s"> </span><span class="s">page</span><span class="s"> </span><span class="s">%</span><span class="s">d</span><span class="s"> </span><span class="s">of</span><span class="s"> </span><span class="s">%</span><span class="s">d</span><span class="s">.</span><span class="s"> </span><span class="s">Total</span><span class="s"> </span><span class="s">records</span><span class="s"> </span><span class="s">%</span><span class="s">d</span><span class="s">&quot;</span> 
-      (<span class="i">page</span><span class="o">.</span><span class="i">AsInteger</span>()) (<span class="i">pages</span><span class="o">.</span><span class="i">AsInteger</span>()) (<span class="i">total</span><span class="o">.</span><span class="i">AsInteger</span>())
+<span class="k">match</span> <span onmouseout="hideTip(event, 'fs12', 27)" onmouseover="showTip(event, 'fs12', 27)" class="i">value</span> <span class="k">with</span>
+| <span onmouseout="hideTip(event, 'fs5', 28)" onmouseover="showTip(event, 'fs5', 28)" class="i">JsonValue</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs16', 29)" onmouseover="showTip(event, 'fs16', 29)" class="i">Array</span> [| <span onmouseout="hideTip(event, 'fs17', 30)" onmouseover="showTip(event, 'fs17', 30)" class="i">info</span>; <span onmouseout="hideTip(event, 'fs18', 31)" onmouseover="showTip(event, 'fs18', 31)" class="i">data</span> |] <span class="k">-&gt;</span>
+    <span class="c">// 概要を表示</span>
+    <span class="k">let</span> <span onmouseout="hideTip(event, 'fs19', 32)" onmouseover="showTip(event, 'fs19', 32)" class="i">page</span>, <span onmouseout="hideTip(event, 'fs20', 33)" onmouseover="showTip(event, 'fs20', 33)" class="i">pages</span>, <span onmouseout="hideTip(event, 'fs21', 34)" onmouseover="showTip(event, 'fs21', 34)" class="i">total</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs17', 35)" onmouseover="showTip(event, 'fs17', 35)" class="i">info</span><span class="o">?</span><span class="i">page</span>, <span onmouseout="hideTip(event, 'fs17', 36)" onmouseover="showTip(event, 'fs17', 36)" class="i">info</span><span class="o">?</span><span class="i">pages</span>, <span onmouseout="hideTip(event, 'fs17', 37)" onmouseover="showTip(event, 'fs17', 37)" class="i">info</span><span class="o">?</span><span onmouseout="hideTip(event, 'fs21', 38)" onmouseover="showTip(event, 'fs21', 38)" class="i">total</span>
+    <span onmouseout="hideTip(event, 'fs9', 39)" onmouseover="showTip(event, 'fs9', 39)" class="i">printfn</span> 
+      <span class="s">&quot;</span><span class="s">%</span><span class="s">d</span><span class="s"> </span><span class="s">ページ中の</span><span class="s"> </span><span class="s">%</span><span class="s">d</span><span class="s"> </span><span class="s">ページ目を表示中</span><span class="s">。</span><span class="s"> </span><span class="s">全体のレコード数は</span><span class="s"> </span><span class="s">%</span><span class="s">d</span><span class="s">&quot;</span> 
+      (<span onmouseout="hideTip(event, 'fs20', 40)" onmouseover="showTip(event, 'fs20', 40)" class="i">pages</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs22', 41)" onmouseover="showTip(event, 'fs22', 41)" class="i">AsInteger</span>()) (<span onmouseout="hideTip(event, 'fs19', 42)" onmouseover="showTip(event, 'fs19', 42)" class="i">page</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs22', 43)" onmouseover="showTip(event, 'fs22', 43)" class="i">AsInteger</span>()) (<span onmouseout="hideTip(event, 'fs21', 44)" onmouseover="showTip(event, 'fs21', 44)" class="i">total</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs22', 45)" onmouseover="showTip(event, 'fs22', 45)" class="i">AsInteger</span>())
     
-    <span class="c">// Print every non-null data point</span>
-    <span class="k">for</span> <span class="i">record</span> <span class="k">in</span> <span class="i">data</span> <span class="k">do</span>
-      <span class="k">if</span> <span class="i">record</span><span class="o">?</span><span onmouseout="hideTip(event, 'fs6', 22)" onmouseover="showTip(event, 'fs6', 22)" class="i">value</span> <span class="o">&lt;&gt;</span> <span class="i">JsonValue</span><span class="o">.</span><span class="i">Null</span> <span class="k">then</span>
-        <span onmouseout="hideTip(event, 'fs4', 23)" onmouseover="showTip(event, 'fs4', 23)" class="i">printfn</span> <span class="s">&quot;</span><span class="s">%</span><span class="s">d</span><span class="s">:</span><span class="s"> </span><span class="s">%</span><span class="s">f</span><span class="s">&quot;</span> (<span class="i">record</span><span class="o">?</span><span class="i">date</span><span class="o">.</span><span class="i">AsInteger</span>()) 
-                         (<span class="i">record</span><span class="o">?</span><span onmouseout="hideTip(event, 'fs6', 24)" onmouseover="showTip(event, 'fs6', 24)" class="i">value</span><span class="o">.</span><span class="i">AsFloat</span>())
-| _ <span class="k">-&gt;</span> <span onmouseout="hideTip(event, 'fs4', 25)" onmouseover="showTip(event, 'fs4', 25)" class="i">printfn</span> <span class="s">&quot;</span><span class="s">failed</span><span class="s">&quot;</span></pre>
+    <span class="c">// 非nullのデータ点をそれぞれ表示</span>
+    <span class="k">for</span> <span onmouseout="hideTip(event, 'fs23', 46)" onmouseover="showTip(event, 'fs23', 46)" class="i">record</span> <span class="k">in</span> <span onmouseout="hideTip(event, 'fs18', 47)" onmouseover="showTip(event, 'fs18', 47)" class="i">data</span> <span class="k">do</span>
+      <span class="k">if</span> <span onmouseout="hideTip(event, 'fs23', 48)" onmouseover="showTip(event, 'fs23', 48)" class="i">record</span><span class="o">?</span><span onmouseout="hideTip(event, 'fs12', 49)" onmouseover="showTip(event, 'fs12', 49)" class="i">value</span> <span class="o">&lt;&gt;</span> <span onmouseout="hideTip(event, 'fs5', 50)" onmouseover="showTip(event, 'fs5', 50)" class="i">JsonValue</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs24', 51)" onmouseover="showTip(event, 'fs24', 51)" class="i">Null</span> <span class="k">then</span>
+        <span onmouseout="hideTip(event, 'fs9', 52)" onmouseover="showTip(event, 'fs9', 52)" class="i">printfn</span> <span class="s">&quot;</span><span class="s">%</span><span class="s">d</span><span class="s">:</span><span class="s"> </span><span class="s">%</span><span class="s">f</span><span class="s">&quot;</span> (<span onmouseout="hideTip(event, 'fs23', 53)" onmouseover="showTip(event, 'fs23', 53)" class="i">record</span><span class="o">?</span><span class="i">date</span><span class="o">.</span><span class="i">AsInteger</span>()) 
+                         (<span onmouseout="hideTip(event, 'fs23', 54)" onmouseover="showTip(event, 'fs23', 54)" class="i">record</span><span class="o">?</span><span onmouseout="hideTip(event, 'fs12', 55)" onmouseover="showTip(event, 'fs12', 55)" class="i">value</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs25', 56)" onmouseover="showTip(event, 'fs25', 56)" class="i">AsFloat</span>())
+| _ <span class="k">-&gt;</span> <span onmouseout="hideTip(event, 'fs9', 57)" onmouseover="showTip(event, 'fs9', 57)" class="i">printfn</span> <span class="s">&quot;</span><span class="s">失敗しました</span><span class="s">&quot;</span></pre>
 </td>
 </tr>
 </table>
 
-<p>The <code>value</code> property of a data point is not always available - as demonstrated
-above, the value may be <code>null</code>. In that case, we want to skip the data point.
-To check whether the property is <code>null</code> we simply compare it with <code>JsonValue.Null</code>.</p>
+<p>データ点の <code>value</code> プロパティは常に使用できるわけではありません。
+直前で説明してある通り、この値は <code>null</code> になることがあります。
+その場合にはデータ点をスキップします。
+プロパティが <code>null</code> かどうか調べる場合は単に <code>JsonValue.Null</code> と
+比較するだけです。</p>
 
-<p>Also note that the <code>date</code> and <code>value</code> properties are formatted as strings 
-in the source file (e.g. <code>"1990"</code>) instead of numbers (e.g. <code>1990</code>). When you try
-accessing the value as an integer or float, the <code>JsonValue</code> automatically parses
-the string into the desired format. In general, the API attempts to be as tolerant
-as possible when parsing the file.</p>
+<p>また <code>date</code> と <code>value</code> のプロパティは元のファイルでは( <code>1990</code> のような)数値ではなく、
+( <code>"1990"</code> のような)文字列形式になっている点に注意してください。
+この値を int または float として取得しようとすると、
+<code>JsonValue</code> は自動的に文字列を特定の形式になるようにパースします。
+一般的にはこのAPIがファイルをパースする場合、
+できるだけ寛容に値を受け入れるようになっています。</p>
 
-<h2>Related articles</h2>
+<h2>関連する記事</h2>
 
 <ul>
-<li><a href="JsonProvider.html">F# Data: JSON Type Provider</a> - discusses a F# type provider
-that provides type-safe access to JSON data</li>
-<li><a href="WorldBank.html">F# Data: WorldBank Provider</a> - the WorldBank type provider
-can be used to easily access data from the WorldBank</li>
+<li><a href="JsonProvider.html">F# Data: JSON 型プロバイダー</a> -
+型安全な方法でJSONデータにアクセスする機能を持った
+F# 型プロバイダーについて説明しています。</li>
+<li><a href="WorldBank.html">F# Data: WorldBank プロバイダー</a> -
+WorldBank 型プロバイダーを使うとWorldBankから受け取ったデータを
+簡単に処理出来るようになります。</li>
 </ul>
 
-<div class="tip" id="fs1">namespace Microsoft.FSharp.Data</div>
-<div class="tip" id="fs2">val info : obj<br /><br />Full name: JsonValue.info</div>
-<div class="tip" id="fs3">val n : seq&lt;obj&gt;<br /><br />Full name: JsonValue.n</div>
-<div class="tip" id="fs4">val printfn : format:Printf.TextWriterFormat&lt;&#39;T&gt; -&gt; &#39;T<br /><br />Full name: Microsoft.FSharp.Core.ExtraTopLevelOperators.printfn</div>
-<div class="tip" id="fs5">val sib : obj</div>
-<div class="tip" id="fs6">val value : obj<br /><br />Full name: JsonValue.value</div>
-<div class="tip" id="fs7">val valueAsync : obj<br /><br />Full name: JsonValue.valueAsync</div>
-<div class="tip" id="fs8">module Array<br /><br />from Microsoft.FSharp.Collections</div>
+<div class="tip" id="fs1">namespace FSharp</div>
+<div class="tip" id="fs2">namespace FSharp.Data</div>
+<div class="tip" id="fs3">namespace FSharp.Data.Json</div>
+<div class="tip" id="fs4">val info : JsonValue<br /><br />Full name: JsonValue.info</div>
+<div class="tip" id="fs5">type JsonValue =<br />&#160;&#160;| String of string<br />&#160;&#160;| Number of decimal<br />&#160;&#160;| Float of float<br />&#160;&#160;| Object of Map&lt;string,JsonValue&gt;<br />&#160;&#160;| Array of JsonValue []<br />&#160;&#160;| Boolean of bool<br />&#160;&#160;| Null<br />&#160;&#160;override ToString : unit -&gt; string<br />&#160;&#160;static member AsyncLoad : uri:string * ?culture:CultureInfo -&gt; Async&lt;JsonValue&gt;<br />&#160;&#160;static member Load : uri:string * ?culture:CultureInfo -&gt; JsonValue<br />&#160;&#160;static member Load : reader:TextReader * ?culture:CultureInfo -&gt; JsonValue<br />&#160;&#160;static member Load : stream:Stream * ?culture:CultureInfo -&gt; JsonValue<br />&#160;&#160;static member Parse : text:string * ?culture:CultureInfo -&gt; JsonValue<br /><br />Full name: FSharp.Data.Json.JsonValue</div>
+<div class="tip" id="fs6">static member JsonValue.Parse : text:string * ?culture:System.Globalization.CultureInfo -&gt; JsonValue</div>
+<div class="tip" id="fs7">module Extensions<br /><br />from FSharp.Data.Json</div>
+<div class="tip" id="fs8">val n : JsonValue<br /><br />Full name: JsonValue.n</div>
+<div class="tip" id="fs9">val printfn : format:Printf.TextWriterFormat&lt;&#39;T&gt; -&gt; &#39;T<br /><br />Full name: Microsoft.FSharp.Core.ExtraTopLevelOperators.printfn</div>
+<div class="tip" id="fs10">val sib : JsonValue</div>
+<div class="tip" id="fs11">member JsonValue.AsString : ?culture:System.Globalization.CultureInfo -&gt; string</div>
+<div class="tip" id="fs12">val value : JsonValue<br /><br />Full name: JsonValue.value</div>
+<div class="tip" id="fs13">static member JsonValue.Load : uri:string * ?culture:System.Globalization.CultureInfo -&gt; JsonValue<br />static member JsonValue.Load : reader:System.IO.TextReader * ?culture:System.Globalization.CultureInfo -&gt; JsonValue<br />static member JsonValue.Load : stream:System.IO.Stream * ?culture:System.Globalization.CultureInfo -&gt; JsonValue</div>
+<div class="tip" id="fs14">val valueAsync : Async&lt;JsonValue&gt;<br /><br />Full name: JsonValue.valueAsync</div>
+<div class="tip" id="fs15">static member JsonValue.AsyncLoad : uri:string * ?culture:System.Globalization.CultureInfo -&gt; Async&lt;JsonValue&gt;</div>
+<div class="tip" id="fs16">union case JsonValue.Array: JsonValue [] -&gt; JsonValue</div>
+<div class="tip" id="fs17">val info : JsonValue</div>
+<div class="tip" id="fs18">val data : JsonValue</div>
+<div class="tip" id="fs19">val page : JsonValue</div>
+<div class="tip" id="fs20">val pages : JsonValue</div>
+<div class="tip" id="fs21">val total : JsonValue</div>
+<div class="tip" id="fs22">member JsonValue.AsInteger : ?culture:System.Globalization.CultureInfo -&gt; int</div>
+<div class="tip" id="fs23">val record : JsonValue</div>
+<div class="tip" id="fs24">union case JsonValue.Null: JsonValue</div>
+<div class="tip" id="fs25">member JsonValue.AsFloat : ?culture:System.Globalization.CultureInfo * ?missingValues:string [] -&gt; float</div>
 
         </div>
         <div class="span3">

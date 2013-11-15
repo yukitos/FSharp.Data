@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>F# Data: XML 型プロバイダ
+    <title>F# Data: XML 型プロバイダー
 </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="The F# Data library implements type providers for working with structured file formats (CSV, JSON and XML) and for accessing the WorldBank and Freebase data. It also includes helpers for other data-related tasks.">
@@ -36,16 +36,16 @@
       <div class="row">
         <div class="span9" id="main">
           
-<h1>F# Data: XML 型プロバイダ</h1>
+<h1>F# Data: XML 型プロバイダー</h1>
 
-<p>このドキュメントではXML型プロバイダを使用して、静的に型付けされた
+<p>このドキュメントではXML型プロバイダーを使用して、静的に型付けされた
 方法でXMLドキュメントにアクセスする方法について説明します。
 まず、XMLドキュメントの構造が推測される方法について説明した後に、
-XML型プロバイダを使用してRSSフィードを解析するデモを紹介します。</p>
+XML型プロバイダーを使用してRSSフィードを解析するデモを紹介します。</p>
 
-<p>ML型プロバイダを使用すると、静的に型付けされた方法でXMLドキュメントに
+<p>ML型プロバイダーを使用すると、静的に型付けされた方法でXMLドキュメントに
 アクセスできます。
-このプロバイダはサンプルとなるドキュメントを入力として受け取ります
+このプロバイダーはサンプルとなるドキュメントを入力として受け取ります
 (あるいはサンプルとして使用されるような複数の子ノードを持った
 ルートXMLノードを含むドキュメントを受け取ります)。
 そして生成された型を使用すると、サンプルドキュメントと同じ構造のファイルを
@@ -53,12 +53,12 @@ XML型プロバイダを使用してRSSフィードを解析するデモを紹�
 ファイルの構造がサンプルと異なる場合には実行時エラーが発生します
 (ただし存在しない要素にアクセスしようとした場合に限られます)。</p>
 
-<h2>プロバイダの基本</h2>
+<h2>プロバイダーの基本</h2>
 
-<p>型プロバイダは <code>FSharp.Data.dll</code> アセンブリ内にあります。
+<p>型プロバイダーは <code>FSharp.Data.dll</code> アセンブリ内にあります。
 このアセンブリが <code>../../../../bin</code> ディレクトリにあると仮定すると、
 F# Interactive内で読み込むためには以下のようにします
-(なおこの型プロバイダは内部で <code>XDocument</code> を使用しているため、
+(なおこの型プロバイダーは内部で <code>XDocument</code> を使用しているため、
 <code>System.Xml.Linq</code> への参照も必要になる点に注意してください)：</p>
 
 <table class="pre"><tr><td class="lines"><pre class="fssnip">
@@ -103,7 +103,7 @@ F# Interactive内で読み込むためには以下のようにします
 </tr>
 </table>
 
-<p>型プロバイダによって生成された型 <code>Author</code> には、XMLドキュメントの
+<p>型プロバイダーによって生成された型 <code>Author</code> には、XMLドキュメントの
 ルート要素にある2つの属性と同じ名前のプロパティがあります。
 プロパティの型はサンプルとして指定したドキュメントの値から推測されます。
 今回の場合、 <code>Name</code> プロパティは <code>string</code> 型で
@@ -136,7 +136,7 @@ F# Interactive内で読み込むためには以下のようにします
 で解析することはできません。両者は単にpublic APIの形式が同じだけであって、
 型の実装としてはそれぞれ別のものだからです）。</p>
 
-<p>この型プロバイダはノードにプリミティブな値だけが含まれていて、子ノードも属性も
+<p>この型プロバイダーはノードにプリミティブな値だけが含まれていて、子ノードも属性も
 持たないような場合に限って、ノードを単純に型付けされたプロパティへと変換します。</p>
 
 <h3>さらに複雑な構造を持つドキュメントに対する型</h3>
@@ -161,7 +161,7 @@ F# Interactive内で読み込むためには以下のようにします
 </table>
 
 <p>ノードが( <code>string</code> のような)単純型として表現できない場合、
-この型プロバイダは複数のプロパティを持つような型を新しく作成します。
+この型プロバイダーは複数のプロパティを持つような型を新しく作成します。
 今回の場合、(属性の名前を元にして) <code>Full</code> というbool型のプロパティが生成されます。
 次に要素のコンテンツを返すような、<code>Value</code> という(特別な)名前のプロパティが
 追加されます。</p>
@@ -197,7 +197,7 @@ F# Interactive内で読み込むためには以下のようにします
 <h2>哲学者たちをもてなす</h2>
 
 <p>このセクションでは特定の話題に関する著者のリストを含んだ、単純なドキュメントを
-型プロバイダで処理する方法についてのデモを紹介します。
+型プロバイダーで処理する方法についてのデモを紹介します。
 サンプルとなるドキュメント <a href="../data/Writers.xml"><code>data/Writers.xml</code></a> は
 以下のようになっています：</p>
 
@@ -207,7 +207,7 @@ F# Interactive内で読み込むためには以下のようにします
 &lt;/authors&gt; 
 </code></pre>
 
-<p>実行時には型プロバイダから生成された型を使用して、以下のような文字列を
+<p>実行時には型プロバイダーから生成された型を使用して、以下のような文字列を
 解析します(構造としてはサンプルのドキュメントと同じですが、
 <code>author</code> ノードに <code>died</code> 属性が含まれているという違いがあります)：</p>
 
@@ -307,7 +307,7 @@ F# Interactive内で読み込むためには以下のようにします
 </tr>
 </table>
 
-<p>引数 <code>Global</code> を <code>true</code> にすると、型プロバイダは同名の要素すべてを <strong>一元化</strong> します。
+<p>引数 <code>Global</code> を <code>true</code> にすると、型プロバイダーは同名の要素すべてを <strong>一元化</strong> します。
 つまりすべての <code>&lt;div&gt;</code> 要素が同じ型として扱われることになります
 ( <code>&lt;div&gt;</code> に指定されたすべての属性をプロパティとして持ち、
 サンプルドキュメント内で見つけられるすべての子要素の組み合わせが考慮されます)。</p>
@@ -351,7 +351,7 @@ F# Interactive内で読み込むためには以下のようにします
 <h2>RSSフィードの読み取り</h2>
 
 <p>今回の総まとめとして、もう少し実用的な例としてRSSフィードを解析してみましょう。
-既に説明した通り、型プロバイダには相対パスあるいはWebページのアドレスを指定できます：</p>
+既に説明した通り、型プロバイダーには相対パスあるいはWebページのアドレスを指定できます：</p>
 
 <table class="pre"><tr><td class="lines"><pre class="fssnip">
 <span class="l">1: </span>
@@ -407,9 +407,9 @@ staticメソッド <code>GetSample</code> を使用します：</p>
 <h2>関連する記事</h2>
 
 <ul>
-<li><a href="../fsharpdata.html">F# Data: 型プロバイダ</a> -
+<li><a href="../fsharpdata.html">F# Data: 型プロバイダー</a> -
 <code>FSharp.Data</code> パッケージ内にある
-その他の型プロバイダに関する情報があります。</li>
+その他の型プロバイダーに関する情報があります。</li>
 </ul>
 
 <div class="tip" id="fs1">namespace FSharp</div>
