@@ -5,16 +5,18 @@
     <title>F# Data: データアクセス用ライブラリ
 </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="The F# Data library implements type providers for working with structured file formats (CSV, JSON and XML) and for accessing the WorldBank and Freebase data. It also includes helpers for other data-related tasks.">
+    <meta name="description" content="The F# Data library implements type providers for working with structured file formats (CSV, JSON and XML) and for accessing the WorldBank and Freebase services. It also includes helpers for other data-related tasks.">
     <meta name="author" content="Tomas Petricek; Gustavo Guerra">
 
     <script src="http://code.jquery.com/jquery-1.8.0.js"></script>
     <script src="http://code.jquery.com/ui/1.8.23/jquery-ui.js"></script>
     <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/css/bootstrap-combined.min.css" rel="stylesheet">
 
-    <link type="text/css" rel="stylesheet" href="/FSharp.Data/ja/content/style.css" />
-    <script type="text/javascript" src="/FSharp.Data/ja/content/tips.js"></script>
+    <link type="text/css" rel="stylesheet" href="/FSharp.Data/ja/../content/style.css" />
+    <link type="text/css" rel="stylesheet" href="/FSharp.Data/ja/../content/fsdata.css" />
+    <script type="text/javascript" src="/FSharp.Data/ja/../content/tips.js"></script>
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -25,10 +27,9 @@
       <div class="masthead">
         <ul class="nav nav-pills pull-right">
           <li><a href="http://fsharp.org">fsharp.org</a></li>
-          <li><a href="http://github.com/fsharp/FSharp.Data">github page</a></li>
-          <li><a href="http://fsharp.github.io/FSharp.Charting/">F# Charting</a></li>
-          <li><a href="http://bluemountaincapital.github.io/Deedle">Deedle</a></li>
-          <li><a href="http://fsharp.github.io/fsharpx/">fsharpx</a></li>
+          <li><a href="http://bluemountaincapital.github.io/Deedle"><img height="16" width="16" src="http://fsharp.org/images/thumbs/Deedle.png" /> Deedle</a></li>
+          <li><a href="http://bluemountaincapital.github.io/FSharpRProvider"><img height=" 16" width="16" src="http://fsharp.org/images/thumbs/FSharpRProvider.png" /> R Provider</a></li>
+          <li><a href="http://fsharp.github.io/FSharp.Charting/"><img height="16" width="16" src="http://fsharp.org/images/thumbs/FSharp.Charting.png" /> F# Charting</a></li>
         </ul>
         <h3 class="muted"><a href="/FSharp.Data/ja/index.html">F# Data</a></h3>
       </div>
@@ -46,22 +47,38 @@
 また、JSONやCSVファイルを解析する機能や、
 HTTPリクエストを送信するための機能もあります。</p>
 
-<div class="row">
-  <div class="span1"></div>
-  <div class="span6">
-    <div class="well well-small" id="nuget">
-      F# Data Libraryは <a href="https://nuget.org/packages/FSharp.Data">NuGetの
-      FSharp.Dataパッケージ</a>として公開されています。
-      ライブラリをインストールするには、
-      <a href="http://docs.nuget.org/docs/start-here/using-the-package-manager-console">
-      パッケージ マネージャー コンソール</a>上から以下のコマンドを実行します：
-      <pre>PM> Install-Package FSharp.Data</pre>
-    </div>
-  </div>
-  <div class="span1"></div>
+<div class="container-fluid" style="margin:15px 0px 15px 0px;">
+    <div class="row-fluid">
+        <div class="span1"></div>
+        <div class="span10" id="anim-holder">
+            <div id="wbtn" style="right:10px">WorldBank</div>
+            <div id="jbtn" style="right:110px">JSON</div>
+            <div id="cbtn" style="right:210px">CSV</div>
+            <a id="lnk" href="../images/start.png"><img id="anim" src="../images/start.png" /></a>
+        </div>
+        <div class="span1"></div>
+    </div> 
 </div>
+<script type="text/javascript">
+$(function(){
+  var wi = new Image();
+  var ji = new Image();
+  var ci = new Image();
+  wi.src ='../images/wb.gif';
+  ji.src ='../images/json.gif';
+  ci.src ='../images/csv.gif';
+  $('#wbtn').click(function(){ $('#anim').attr('src',wi.src); $('#lnk').attr('href',wi.src); });
+  $('#jbtn').click(function(){ $('#anim').attr('src',ji.src); $('#lnk').attr('href',ji.src); });
+  $('#cbtn').click(function(){ $('#anim').attr('src',ci.src); $('#lnk').attr('href',ci.src); });
+});</script>
 
-<p>あるいは <a href="https://github.com/fsharp/FSharp.Data/zipball/master">ソースコードをZIPファイルとしてダウンロード</a> したり、
+<p>F# Data Libraryは <a href="https://nuget.org/packages/FSharp.Data">NuGetの
+FSharp.Dataパッケージ</a>として公開されています。
+ライブラリをインストールするには、
+<a href="http://docs.nuget.org/docs/start-here/using-the-package-manager-console">
+パッケージ マネージャー コンソール</a>上から以下のコマンドを実行します：
+<code>Install-Package FSharp.Data</code>.
+あるいは <a href="https://github.com/fsharp/FSharp.Data/zipball/master">ソースコードをZIPファイルとしてダウンロード</a> したり、
 <a href="https://github.com/fsharp/FSharp.Data/zipball/release">コンパイル済みバイナリ</a> をZIPファイルとして
 ダウンロードすることもできます。</p>
 
@@ -74,16 +91,10 @@ HTTPリクエストを送信するための機能もあります。</p>
 もしも誤字脱字など見つけた場合には是非pullリクエストを投げてください！</p>
 
 <ul>
-<li><p><a href="fsharpdata.html">F# Data</a> はドキュメントのホームページで、
+<li><a href="fsharpdata.html">F# Data</a> はドキュメントのホームページで、
 それぞれの型プロバイダ（CSVやXML、JSON、WorldBank、Freebase）に関する
 ドキュメントへのリンクが揃っています。
-また、 <code>FSharp.Data.dll</code> 内のpublic型に関するドキュメントへのリンクもあります。</p></li>
-<li><p><a href="experimental.html">F# Data 試験用</a> はF# Dataの試験的な拡張機能に関する
-ドキュメントです。
-この試験的なライブラリには品質がまだ高い水準に達していないような
-型プロバイダがあります。
-現時点ではこのライブラリには <a href="http://apiary.io">apiary.io</a> を使用して
-ドキュメント化されたREST APIに関する型プロバイダがあります。is a documentation for</p></li>
+また、 <code>FSharp.Data.dll</code> 内のpublic型に関するドキュメントへのリンクもあります。</li>
 </ul>
 
 <h2>貢献方法</h2>
@@ -114,9 +125,6 @@ F#型プロバイダに関する包括的なコレクションとなることを
 さらに、このライブラリでは（現時点では）ドキュメントを作成したり、
 変更したりするようなAPIは公開されていません。</p>
 
-<p>その他のF#型プロバイダに関心がある場合は
-<a href="https://github.com/fsharp/fsharpx">FSharpx library</a> を参照されるとよいでしょう。</p>
-
 <h3>ライブラリのライセンス</h3>
 
 <p>ライブラリは Apache 2.0ライセンスの元に公開されています。
@@ -128,11 +136,15 @@ F#型プロバイダに関する包括的なコレクションとなることを
         </div>
         <div class="span3">
           <a href="/FSharp.Data/ja/index.html">
-            <img src="/FSharp.Data/ja/images/logo.png" style="width:140px;height:140px;margin:10px 0px 0px 35px;border-style:none;" />
+            <img src="/FSharp.Data/ja/../images/logo.png" style="width:140px;height:140px;margin:10px 0px 0px 35px;border-style:none;" />
           </a>
 
           <ul class="nav nav-list" id="menu">
-            <li class="nav-header">F# Data</li>
+            <li class="nav-header">
+              <a href="/FSharp.Data/ja/index.html" class="nflag"><img src="/FSharp.Data/ja/../images/ja.png" /></a>
+              <a href="/FSharp.Data/ja/../index.html" class="nflag nflag2"><img src="/FSharp.Data/ja/../images/en.png" /></a>
+              F# Data
+            </li>
             <li class="divider"></li>
             <li><a href="https://nuget.org/packages/FSharp.Data">NuGet経由でライブラリを取得</a></li>
             <li><a href="http://github.com/fsharp/FSharp.Data">GitHub上のソースコード</a></li>
@@ -140,13 +152,13 @@ F#型プロバイダに関する包括的なコレクションとなることを
             <li><a href="http://github.com/fsharp/FSharp.Data/blob/master/RELEASE_NOTES.md">リリースノート</a></li>
             <li><span>
                 <a href="/FSharp.Data/ja/contributing.html">F# Dataに貢献する</a>
-                (<a href="/FSharp.Data/ja/../contributing.html">En</a>)
+                (<a href="http://github.com/fsharp/FSharp.Data/blob/master/CONTRIBUTING.md">En</a>)
                 </span></li>
             
             <li class="nav-header">F# Data ライブラリ</li>
             <li><span>
-                <a href="/FSharp.Data/ja/fsharpdata.html">はじめに</a>
-                (<a href="/FSharp.Data/ja/../fsharpdata.html">En</a>)
+                <a href="/FSharp.Data/ja/index.html">はじめに</a>
+                (<a href="/FSharp.Data/ja/../index.html">En</a>)
                 </span></li>
             <li class="divider"></li>
             <li><span>
@@ -183,26 +195,20 @@ F#型プロバイダに関する包括的なコレクションとなることを
                 (<a href="/FSharp.Data/ja/../library/Http.html">En</a>)
                 </span></li>
 
-            <li class="nav-header">F# Data 試験用ライブラリ</li>
-            <li><span>
-                <a href="/FSharp.Data/ja/experimental.html">はじめに</a>
-                (<a href="/FSharp.Data/ja/../experimental.html">En</a>)
-                </span></li>
-            <li><span>
-                <a href="/FSharp.Data/ja/experimental/ApiaryProvider.html">Apiary 型プロバイダー</a>
-                (<a href="/FSharp.Data/ja/../experimental/ApiaryProvider.html">En</a>)
-                </span></li>
-
             <li class="nav-header">チュートリアル</li>
             <li><span>
-                <a href="/FSharp.Data/ja/tutorials/JsonToXml.html">JsonToXml</a>
+                <a href="/FSharp.Data/ja/tutorials/JsonToXml.html">JSONとXMLの相互変換</a>
                 (<a href="/FSharp.Data/ja/../tutorials/JsonToXml.html">En</a>)
+                </span></li>
+
+            <li><span>
+                <a href="/FSharp.Data/ja/tutorials/JsonAnonymizer.html">JSONの匿名化</a>
+                (<a href="/FSharp.Data/ja/../tutorials/JsonAnonymizer.html">En</a>)
                 </span></li>
 
             <li class="nav-header">リファレンス</li>
             <li><span>
-                <a href="/FSharp.Data/ja/reference/index.html">API リファレンス</a>
-                (<a href="/FSharp.Data/ja/../reference/index.html">En</a>)
+                <a href="/FSharp.Data/ja/../reference/index.html">API リファレンス (En)</a>
                 </span></li>
           </ul>
         </div>

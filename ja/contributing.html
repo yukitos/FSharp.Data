@@ -5,16 +5,18 @@
     <title>F# Data に貢献する
 </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="The F# Data library implements type providers for working with structured file formats (CSV, JSON and XML) and for accessing the WorldBank and Freebase data. It also includes helpers for other data-related tasks.">
+    <meta name="description" content="The F# Data library implements type providers for working with structured file formats (CSV, JSON and XML) and for accessing the WorldBank and Freebase services. It also includes helpers for other data-related tasks.">
     <meta name="author" content="Tomas Petricek; Gustavo Guerra">
 
     <script src="http://code.jquery.com/jquery-1.8.0.js"></script>
     <script src="http://code.jquery.com/ui/1.8.23/jquery-ui.js"></script>
     <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/css/bootstrap-combined.min.css" rel="stylesheet">
 
-    <link type="text/css" rel="stylesheet" href="/FSharp.Data/ja/content/style.css" />
-    <script type="text/javascript" src="/FSharp.Data/ja/content/tips.js"></script>
+    <link type="text/css" rel="stylesheet" href="/FSharp.Data/ja/../content/style.css" />
+    <link type="text/css" rel="stylesheet" href="/FSharp.Data/ja/../content/fsdata.css" />
+    <script type="text/javascript" src="/FSharp.Data/ja/../content/tips.js"></script>
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -25,10 +27,9 @@
       <div class="masthead">
         <ul class="nav nav-pills pull-right">
           <li><a href="http://fsharp.org">fsharp.org</a></li>
-          <li><a href="http://github.com/fsharp/FSharp.Data">github page</a></li>
-          <li><a href="http://fsharp.github.io/FSharp.Charting/">F# Charting</a></li>
-          <li><a href="http://bluemountaincapital.github.io/Deedle">Deedle</a></li>
-          <li><a href="http://fsharp.github.io/fsharpx/">fsharpx</a></li>
+          <li><a href="http://bluemountaincapital.github.io/Deedle"><img height="16" width="16" src="http://fsharp.org/images/thumbs/Deedle.png" /> Deedle</a></li>
+          <li><a href="http://bluemountaincapital.github.io/FSharpRProvider"><img height=" 16" width="16" src="http://fsharp.org/images/thumbs/FSharpRProvider.png" /> R Provider</a></li>
+          <li><a href="http://fsharp.github.io/FSharp.Charting/"><img height="16" width="16" src="http://fsharp.org/images/thumbs/FSharp.Charting.png" /> F# Charting</a></li>
         </ul>
         <h3 class="muted"><a href="/FSharp.Data/ja/index.html">F# Data</a></h3>
       </div>
@@ -49,7 +50,7 @@ F# Dataにおける複数のターゲットに対する処理方法
 <li><p>このページはGitHub上のF# Dataプロジェクトに対して
 pullリクエストを送信することで編集できます。
 そのため、F# Dataで遊んでいる間に何かしら学んだことがあれば、是非それを
-<a href="https://github.com/fsharp/FSharp.Data/blob/master/samples/contributing.md">こちら</a>
+<a href="https://github.com/fsharp/FSharp.Data/blob/master/docs/content/ja/contributing.md">こちら</a>
 に記録として残してください!</p></li>
 <li><p>機能(あるいはすばらしいアイディア！)に関する議論、
 あるいは貢献方法に関する提案がある場合には、GitHub上の
@@ -119,10 +120,7 @@ FSharp.Dataの型プロバイダではないコンポーネントも含まれま
 <ul>
 <li><strong>FSharp.Data</strong> - デスクトップ.NET 4.0 バージョン</li>
 <li><strong>FSharp.Data.Portable</strong> - F# ポータブルライブラリバージョン
-(デスクトップの.NET 4.0、Windows Phone 8、 Windows 8を対象とする)</li>
-<li><strong>FSharp.Data.Silverlight</strong> - Silverlight 5 バージョン</li>
-<li><strong>FSharp.Data.Experimental</strong> - 試験的機能向けのデスクトップ.NET 4.0 バージョン</li>
-<li><strong>FSharp.Data.Experimental.Portable</strong> - 試験的機能向けのF#
+(デスクトップの.NET 4.0、Windows Phone 8、 Windows 8を対象とする)
 ポータブルライブラリバージョン</li>
 </ul>
 
@@ -138,8 +136,6 @@ XmlProviderもSilverlight上では機能しません。</p>
 <ul>
 <li><strong>FSharp.Data.DesignTime</strong> - デスクトップエディタ用のメインバージョン</li>
 <li><strong>FSharp.Data.DesignTime.Silverlight</strong> - Try F#用のメインバージョン</li>
-<li><strong>FSharp.Data.Experimental.DesignTime</strong> - デスクトップエディタ用の試験的バージョン</li>
-<li><strong>FSharp.Data.Experimental.DesignTime.Silverlight</strong> - Try F#用の試験的バージョン</li>
 </ul>
 
 <p>Silverlight 5のプロジェクトをコンパイルするためには、
@@ -183,7 +179,7 @@ F#チームによって作成された <code>ProvidedTypes</code> ヘルパや�
 公開される型を登録する処理を行うようなエントリポイントです。</p></li>
 </ul>
 
-<p>WorldBank、Freebase、Apiaryの型プロバイダの場合は異なります。
+<p>WorldBank、Freebaseの型プロバイダの場合は異なります。
 これらには推論が必要ありませんが、やはり <strong>実行時</strong> と <strong>デザイン時</strong>
 コンポーネントの区別があります。
 したがってこれらの型プロバイダの場合、少なくとも2つのファイル
@@ -330,11 +326,15 @@ F#スクリプトファイル) ファイルを素敵なHTMLドキュメントに
         </div>
         <div class="span3">
           <a href="/FSharp.Data/ja/index.html">
-            <img src="/FSharp.Data/ja/images/logo.png" style="width:140px;height:140px;margin:10px 0px 0px 35px;border-style:none;" />
+            <img src="/FSharp.Data/ja/../images/logo.png" style="width:140px;height:140px;margin:10px 0px 0px 35px;border-style:none;" />
           </a>
 
           <ul class="nav nav-list" id="menu">
-            <li class="nav-header">F# Data</li>
+            <li class="nav-header">
+              <a href="/FSharp.Data/ja/index.html" class="nflag"><img src="/FSharp.Data/ja/../images/ja.png" /></a>
+              <a href="/FSharp.Data/ja/../index.html" class="nflag nflag2"><img src="/FSharp.Data/ja/../images/en.png" /></a>
+              F# Data
+            </li>
             <li class="divider"></li>
             <li><a href="https://nuget.org/packages/FSharp.Data">NuGet経由でライブラリを取得</a></li>
             <li><a href="http://github.com/fsharp/FSharp.Data">GitHub上のソースコード</a></li>
@@ -342,13 +342,13 @@ F#スクリプトファイル) ファイルを素敵なHTMLドキュメントに
             <li><a href="http://github.com/fsharp/FSharp.Data/blob/master/RELEASE_NOTES.md">リリースノート</a></li>
             <li><span>
                 <a href="/FSharp.Data/ja/contributing.html">F# Dataに貢献する</a>
-                (<a href="/FSharp.Data/ja/../contributing.html">En</a>)
+                (<a href="http://github.com/fsharp/FSharp.Data/blob/master/CONTRIBUTING.md">En</a>)
                 </span></li>
             
             <li class="nav-header">F# Data ライブラリ</li>
             <li><span>
-                <a href="/FSharp.Data/ja/fsharpdata.html">はじめに</a>
-                (<a href="/FSharp.Data/ja/../fsharpdata.html">En</a>)
+                <a href="/FSharp.Data/ja/index.html">はじめに</a>
+                (<a href="/FSharp.Data/ja/../index.html">En</a>)
                 </span></li>
             <li class="divider"></li>
             <li><span>
@@ -385,26 +385,20 @@ F#スクリプトファイル) ファイルを素敵なHTMLドキュメントに
                 (<a href="/FSharp.Data/ja/../library/Http.html">En</a>)
                 </span></li>
 
-            <li class="nav-header">F# Data 試験用ライブラリ</li>
-            <li><span>
-                <a href="/FSharp.Data/ja/experimental.html">はじめに</a>
-                (<a href="/FSharp.Data/ja/../experimental.html">En</a>)
-                </span></li>
-            <li><span>
-                <a href="/FSharp.Data/ja/experimental/ApiaryProvider.html">Apiary 型プロバイダー</a>
-                (<a href="/FSharp.Data/ja/../experimental/ApiaryProvider.html">En</a>)
-                </span></li>
-
             <li class="nav-header">チュートリアル</li>
             <li><span>
-                <a href="/FSharp.Data/ja/tutorials/JsonToXml.html">JsonToXml</a>
+                <a href="/FSharp.Data/ja/tutorials/JsonToXml.html">JSONとXMLの相互変換</a>
                 (<a href="/FSharp.Data/ja/../tutorials/JsonToXml.html">En</a>)
+                </span></li>
+
+            <li><span>
+                <a href="/FSharp.Data/ja/tutorials/JsonAnonymizer.html">JSONの匿名化</a>
+                (<a href="/FSharp.Data/ja/../tutorials/JsonAnonymizer.html">En</a>)
                 </span></li>
 
             <li class="nav-header">リファレンス</li>
             <li><span>
-                <a href="/FSharp.Data/ja/reference/index.html">API リファレンス</a>
-                (<a href="/FSharp.Data/ja/../reference/index.html">En</a>)
+                <a href="/FSharp.Data/ja/../reference/index.html">API リファレンス (En)</a>
                 </span></li>
           </ul>
         </div>
